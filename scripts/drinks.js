@@ -48,6 +48,14 @@ const drinksCollection = [
       isTop: true,
     },
     {
+      id: 'С003',
+      name: 'СЩС',
+      price: '10$',
+      desc: 'Bacon<br>Lettuce<br>Tomato<br>Toast<br>Mayonnaise',
+      image: '../data/drinksImages/Coffee 2.png',
+      isTop: true,
+    },
+    {
       id: 'SC004',
       name: 'Matcha Latte',
       price: '6$',
