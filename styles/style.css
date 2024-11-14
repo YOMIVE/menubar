@@ -1,0 +1,178 @@
+/*Общие настройки*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #151611;
+    --white: #fff;
+    --btn-gray-color: rgba(255, 255, 255, 0.733);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 3000px;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 16px;
+
+    background: var(--primary-color);
+}
+
+
+
+
+/*Для Скроллбара*/
+.scrollable {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Скрыть скроллбар для Firefox */
+    -ms-overflow-style: none; /* Скрыть скроллбар для IE и Edge */
+}
+.scrollable::-webkit-scrollbar {
+    display: none; /* Скрыть скроллбар для Chrome, Safari и Opera */
+}
+
+/* Навигационные кнопки */
+.drinks-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+.nav-button {
+    position: absolute;
+    top: 138px; /* Отступ от верхнего края контейнера */
+    color: var(--btn-gray-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff00;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+.nav-button.left {
+    left: -10px; /* Расположение кнопки слева от контейнера */
+}
+.nav-button.right {
+    right: -10px; /* Расположение кнопки справа от контейнера */
+}
+
+
+.nav-button[style*="display: none"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+/*Стили для карточек и секции*/
+.section {
+}
+
+.section > h3 {
+    margin: 30px 0;
+    font-size: 24px;
+    color: var(--white);
+    font-weight: 700;
+}   
+
+.drinks-container {
+    width: 1200px;
+}
+
+.horisontal-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    min-width: 216px;
+    height: 288px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #e3e3e30a, #81818121);
+    margin-right: 5px;
+}
+
+.card.active {
+    height: auto;
+}
+
+.card > .cardPhoto {
+    width: 200px;
+    height: 230px;
+    margin-top: 8px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.card > .text {
+    width: 200px;
+    font-size: 18px;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.card > .text > .name {
+    font-weight: 500;
+}
+
+.card > .text > .price {
+    font-weight: 300;
+}
+
+.card > .text-wrapper > .textDesc {
+    margin-left: 3px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #FFF;
+    width: 200px;
+
+    /* Начальные стили для скрытого состояния */
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: absolute; /* Расположим текст поверх карточки */
+    left: 0;
+}
+
+.card.active >  .text-wrapper > .textDesc {
+    /* Стили для активного состояния */
+    opacity: 1;
+    transform: translateY(0); /* Возвращаем текст в исходное положение */
+    position: static; /* Отменяем абсолютное позиционирование */
+}
+
+.text-wrapper {
+    position: relative;
+    overflow: hidden; /* Скрываем контент, если текст анимирован */
+}
+
+.card.active >  .text-wrapper > .textDesc {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
