@@ -184,9 +184,42 @@
         background-position: center; /* Центрирует картинку в элементе */
         background-repeat: no-repeat; /* Запрещает повторение картинки */
         width: 100vw;
-        height: 36rem;
+        height: 60vh;
+
+        position: relative;
     }
 
+    .textGroup {
+        position: absolute;
+        bottom: 2rem;
+        left: 0.8rem;
+        z-index: 15;
+    }
+    
+    .textGroup > h2 {
+        color: white;
+        font-weight: 900;
+    }
+
+    .data-textGroup {
+        color: #DDDDDD;
+        font-weight: 300;
+    }
+    
+    .desc-textGroup {
+        color: #DDDDDD;
+        font-weight: 500;
+    }
+
+    .gradient {
+        position: absolute;
+        background: linear-gradient(to bottom, #15161100, #151611);
+        width: 100%;
+        height: 10vh;
+        bottom: 0;
+        left: 0;
+        z-index: 14;
+    }
 
 
 
