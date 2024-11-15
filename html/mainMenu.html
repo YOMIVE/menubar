@@ -20,11 +20,74 @@
     <title>Main Page</title>
 </head>
 <body>
+    <header>
+        <div class="logoAndBtns">
+            <h1 class="logo">LemonTree</h1>
+            <div class="btns">
+                <div class="language-selector">
+                    <button class="selected-language">ENG</button>
+                    <ul class="language-dropdown hidden">
+                        <li data-lang="RUS">RUS</li>
+                        <li data-lang="UKR">UKR</li>
+                        <li data-lang="TUR">TUR</li>
+                        <li data-lang="SRB">SRB</li>
+                        <li data-lang="KAZ">KAZ</li>
+                    </ul>
+                </div>
+                
+                
+                <a href="https://www.instagram.com/lemontree.budva/"><img src="../images/svg/btn-insta.svg" alt="instagram"></a>
+                <button class="btn-hamburger" onclick="openPhoneMenu()"><img src="../images/svg/btn-hamburder.svg" alt="hamburger"></button>
+            </div>
+        </div>
+
+        <div class="nav-bar-pc">
+            <hr>
+            <ul>
+                <li><button id="navBtn-TopDrinks" onclick="scrollToTopDrinks()">Top Drinks</button></li>
+                <li><button id="navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()">Signature Сocktails</button></li>
+                <li><button id="navBtn-Dishes" onclick="scrollToSignatureСocktails()">Dishes</button></li>
+                <li><button id="navBtn-Snacks" onclick="scrollToSignatureСocktails()">Snacks</button></li>
+                <li><button id="navBtn-Desserts" onclick="scrollToSignatureСocktails()">Desserts</button></li>
+            </ul>
+        </div>
+
+        <div class="nav-bar-phone">
+            <button onclick="closePhoneMenu()" class="btn-nav-bar-phone">
+
+            </button>
+            <div class="content-nav-bar-phone">
+
+            </div>
+        </div>
+    </header>
+
+
+
     <section>
+        <div class="affiche">
+            <div class="textGroup">
+                <h2>Free Guitar</h2>
+                <p class="data-textGroup">11.11 - 13.11</p>
+                <p class="desc-textGroup">Free concert of guitar music.</p>
+            </div>
+            <div class="gradient"></div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         <div class="section">
-            <h3>Top Drinks</h3>
+            <h3 id="h3TopDrinks">Top Drinks</h3>
             <div class="drinks-container">
-                <button class="nav-button left" onclick="scrollLeft()">‹</button>
+                <button class="nav-button left">‹</button>
                 <div class="scrollable TOP">
                     <!--<div class="card" id="SC001">
                         <img src="data/drinksImages/Coffee 1.png" alt="Coffee" class="cardPhoto">
@@ -39,17 +102,19 @@
                         </div class="text-wrapper">
                     </div>-->
                 </div> 
-                <button class="nav-button right" onclick="scrollRight()">›</button>
+                <button class="nav-button right" >›</button>
             </div>
         </div>
         <div class="section">
-            <h3>Signature Сocktails</h3>
+            <h3 id="h3SignatureСocktails">Signature Сocktails</h3>
             <div class="drinks-container">
-                <button class="nav-button left" onclick="scrollLeft()">‹</button>
-                <div class="scrollable SC"></div> 
-                <button class="nav-button right" onclick="scrollRight()">›</button>
+                <button class="nav-button left">‹</button>
+                <div class="scrollable CF"></div> 
+                <button class="nav-button right" >›</button>
             </div>
         </div>
     </section>
+    <script src="../scripts/btns.js"></script>
+    <script src="../scripts/index.js"></script>
 </body>
 </html>

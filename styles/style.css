@@ -12,11 +12,17 @@
     padding: 0;
 }
 
+/* Убираем обводку вокруг ссылок и кнопок */
+a:focus, button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* Для мобильных устройств (например, Android) */
+}
+
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: start;
+    align-items: center;
+    flex-direction: column;
     height: 3000px;
     font-family: "Inter", serif;
     font-optical-sizing: auto;
@@ -24,7 +30,204 @@ body {
     font-size: 16px;
 
     background: var(--primary-color);
+
+    position: relative;
+
 }
+
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--primary-color);
+    z-index: 100;
+}
+
+.logoAndBtns {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 20px 0;
+}
+
+
+.logoAndBtns > h1 {
+    color: var(--white);
+}
+
+
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar-pc {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.nav-bar-pc > ul {
+    margin: 10px 200px;
+    list-style-type: none;
+    padding-left: 0; /* Убирает отступ слева, если нужно */
+    padding: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.nav-bar-pc > ul > li {
+    text-decoration: none;
+}
+
+.nav-bar-pc > ul li > button {
+    border: none;
+    background: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.nav-bar-pc > ul li > button:hover {
+    color: var(--btn-gray-color);
+    transform: translateY(-1px); /* Поднимаем текст на 2 пикселя при наведении */
+}
+
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.language-selector:hover {
+    transform: translateY(-2px);
+}
+
+.selected-language {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border: none;
+    width: 40.5px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    position: relative;
+    z-index: 11;
+    padding: auto auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.selected-language:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+}
+
+
+.language-dropdown {
+    position: absolute;
+    top: 40%;
+    font-size: 12px;
+    color: var(--primary-color);
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+}
+
+.language-dropdown > :first-child {
+    padding-top: 30px;
+}
+
+.language-dropdown li {
+    padding: 8px 8px;
+    cursor: pointer;
+}
+
+.language-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.language-dropdown.hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.language-dropdown.visible {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+
+
+.btn-hamburger {
+    background: #00000000;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-hamburger:hover {
+}
+
+.btns > a {
+    width: 41px;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #544;
+    transition: all 0.5s ease-in-out;
+}
+
+.btns > a:hover {
+    transform: translateY(-2px);
+}
+
+.nav-bar-phone {
+    display: none;
+}
+
+
+
+
+
+.affiche {
+    display: none;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -84,7 +287,8 @@ body {
 
 
 /*Стили для карточек и секции*/
-.section {
+section {
+    padding-top: 120px;
 }
 
 .section > h3 {
@@ -101,6 +305,11 @@ body {
 .horisontal-panel {
     display: flex;
     justify-content: space-between;
+    
+}
+
+.scrollable {
+    padding: 5px 0;
 }
 
 .card {
@@ -112,8 +321,13 @@ body {
     min-width: 216px;
     height: 288px;
     border-radius: 15px;
-    background: linear-gradient(to bottom, #e3e3e30a, #81818121);
+    background: linear-gradient(to bottom, #ffffff05, #8181810b);
     margin-right: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
 }
 
 .card.active {

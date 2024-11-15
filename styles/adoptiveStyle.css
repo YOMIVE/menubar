@@ -1,3 +1,17 @@
+/* Для мобильных и сенсорных устройств убираем фокус */
+@media (pointer: coarse) {
+    button:focus {
+        outline: none;
+    }
+}
+
+:root {
+    --primary-color: #151611;
+    --white: #fff;
+    --btn-gray-color: rgba(255, 255, 255, 0.733);
+}
+
+
 @media (max-width: 600px) {
     body {
         display: flex;
@@ -6,161 +20,261 @@
         align-items: start;
     }
 
+    header {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        margin: 0 0;
+    }
+
+    header > .logoAndBtns > h1 {
+        color: var(--white);
+        margin-left: 0.8rem;
+    }
 
 
 
+    .logoAndBtns {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        margin: 20px 0;
+    }
+
+    .nav-bar-pc {
+        display: none;
+    }
+
+    .btns {
+        margin-right: 0.8rem;
+    }
+
+    .btns > a {
+        display: none;
+    }
+
+    .btn-hamburger {
+        display: block;
+    }
+
+    .nav-bar-phone {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 100vw;
+
+        width: 100vw;
+        height: 1000vh;
+
+        z-index: 100;
+
+        transition: all 0.3s ease-out;
+    }
+
+    .nav-bar-phone > .btn-nav-bar-phone {
+        width: 48vw;
+        height: 100vh;
+        border: none;
+        background: #00ffe500;
+    }
+
+    .nav-bar-phone > .content-nav-bar-phone {
+        width: 52vw;
+        height: 100vh;
+        background: var(--primary-color);
+        border-left: 2px solid white;
+    }
+
+
+    .nav-bar-phone.active {
+        left: 0vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     /*Для Скроллбара*/
-.scrollable {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Скрыть скроллбар для Firefox */
-    -ms-overflow-style: none; /* Скрыть скроллбар для IE и Edge */
-}
-.scrollable::-webkit-scrollbar {
-    display: none; /* Скрыть скроллбар для Chrome, Safari и Opera */
-}
+    .scrollable {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Скрыть скроллбар для Firefox */
+        -ms-overflow-style: none; /* Скрыть скроллбар для IE и Edge */
+    }
+    .scrollable::-webkit-scrollbar {
+        display: none; /* Скрыть скроллбар для Chrome, Safari и Opera */
+    }
 
-/* Навигационные кнопки */
-.drinks-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    width: calc(100vw - 3rem);
-    max-width: 100vw;
-    position: relative;
-}
-.nav-button {
-    position: absolute;
-    top: 8.63rem; /* Отступ от верхнего края контейнера */
-    color: var(--btn-gray-color);
-    border: none;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: #ffffff00;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-}
-.nav-button.left {
-    left: -0.65rem; /* Расположение кнопки слева от контейнера */
-}
-.nav-button.right {
-    right: 0.5rem; /* Расположение кнопки справа от контейнера */
-}
-
-
-.nav-button[style*="display: none"] {
-    opacity: 0;
-    pointer-events: none;
-}
+    /* Навигационные кнопки */
+    .drinks-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        width: calc(100vw - 3rem);
+        max-width: 100vw;
+        position: relative;
+    }
+    .nav-button {
+        position: absolute;
+        top: 8.63rem; /* Отступ от верхнего края контейнера */
+        color: var(--btn-gray-color);
+        border: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: #ffffff00;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        transition: opacity 0.3s ease;
+    }
+    .nav-button.left {
+        left: -0.45rem; /* Расположение кнопки слева от контейнера */
+    }
+    .nav-button.right {
+        right: 0.1rem; /* Расположение кнопки справа от контейнера */
+    }
 
 
+    .nav-button[style*="display: none"] {
+        opacity: 0;
+        pointer-events: none;
+    }
 
 
-/*Стили для карточек и секции*/
 
-section {
-    margin-left: 0.8rem;
-}
 
-.section {
-}
+    /*Стили для карточек и секции*/
 
-.section > h3 {
-    margin: 2rem 0;
-    margin-left: 0.8rem;
-    font-size: 1.5rem;
-    color: var(--white);
-    font-weight: 700;
-}   
+    section {
+        padding-top: 5rem;
+    }
 
-.drinks-container {
-    width: 100vw;
-}
+    .section > h3 {
+        margin: 2rem 0;
+        margin-left: 0.8rem;
+        font-size: 1.5rem;
+        color: var(--white);
+        font-weight: 700;
+    }   
 
-.horisontal-panel {
-    display: flex;
-    justify-content: space-between;
-}
 
-.card {
-    transition: all 0.5s ease;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    min-width: 13.5rem;
-    height: 18rem;
-    border-radius: 15px;
-    background: linear-gradient(to bottom, #e3e3e30a, #81818121);
-    margin-right: 0.35rem;
-}
+    .affiche {
+        display: block;
 
-.card.active {
-    height: auto;
-}
+        background-image: url('../data/afficheImages/affiche-1.png'); /* Укажите путь к вашей картинке */
+        background-size: cover; /* Обеспечивает, чтобы картинка полностью покрывала весь элемент */
+        background-position: center; /* Центрирует картинку в элементе */
+        background-repeat: no-repeat; /* Запрещает повторение картинки */
+        width: 100vw;
+        height: 36rem;
+    }
 
-.card > .cardPhoto {
-    width: 12.5rem;
-    height: 14.4rem;
-    margin-top: 0.5rem;
-    border-radius: 0.63rem;
-    background-color: #fff;
-}
 
-.card > .text {
-    width: 12.5rem;
-    font-size: 1.12rem;
-    color: #FFF;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-}
 
-.card > .text > .name {
-    font-weight: 500;
-}
 
-.card > .text > .price {
-    font-weight: 300;
-}
 
-.card > .text-wrapper > .textDesc {
-    margin-left: 0.19rem;
-    margin-bottom: 0.38rem;
-    font-size: 0.81rem;
-    color: #FFF;
-    width: 12.5rem;
+    .drinks-container {
+        width: 100vw;
+    }
 
-    /* Начальные стили для скрытого состояния */
-    opacity: 0;
-    transition: all 0.5s ease;
-    position: absolute; /* Расположим текст поверх карточки */
-    left: 0;
-}
+    .horisontal-panel {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.card.active >  .text-wrapper > .textDesc {
-    /* Стили для активного состояния */
-    opacity: 1;
-    transform: translateY(0); /* Возвращаем текст в исходное положение */
-    position: static; /* Отменяем абсолютное позиционирование */
-}
+    .scrollable > :first-child {
+        margin-left: 0.5rem;
+    }
 
-.text-wrapper {
-    position: relative;
-    overflow: hidden; /* Скрываем контент, если текст анимирован */
-}
+    .card {
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        min-width: 13.5rem;
+        height: 18rem;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, #ffffff0c, #ffffff06);
+        margin-right: 0.35rem;
+    }
 
-.card.active >  .text-wrapper > .textDesc {
-    opacity: 1;
-    transition: all 0.5s ease;
-}
+    .card.active {
+        height: auto;
+    }
+
+    .card > .cardPhoto {
+        width: 12.5rem;
+        height: 14.4rem;
+        margin-top: 0.5rem;
+        border-radius: 0.63rem;
+        background-color: #fff;
+    }
+
+    .card > .text {
+        width: 12.5rem;
+        font-size: 1.12rem;
+        color: #FFF;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .card > .text > .name {
+        font-weight: 500;
+    }
+
+    .card > .text > .price {
+        font-weight: 300;
+    }
+
+    .card > .text-wrapper > .textDesc {
+        margin-left: 0.19rem;
+        margin-bottom: 0.38rem;
+        font-size: 0.81rem;
+        color: #FFF;
+        width: 12.5rem;
+
+        /* Начальные стили для скрытого состояния */
+        opacity: 0;
+        transition: all 0.5s ease;
+        position: absolute; /* Расположим текст поверх карточки */
+        left: 0;
+    }
+
+    .card.active >  .text-wrapper > .textDesc {
+        /* Стили для активного состояния */
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем текст в исходное положение */
+        position: static; /* Отменяем абсолютное позиционирование */
+    }
+
+    .text-wrapper {
+        position: relative;
+        overflow: hidden; /* Скрываем контент, если текст анимирован */
+    }
+
+    .card.active >  .text-wrapper > .textDesc {
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
 }

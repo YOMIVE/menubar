@@ -11,29 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Функции прокрутки для текущего контейнера
-        function scrollRight() {
+        const scrollRight = () => {
             scrollContainer.scrollBy({ left: 200, behavior: 'smooth' });
-        }
+        };
 
-        function scrollLeft() {
+        const scrollLeft = () => {
             scrollContainer.scrollBy({ left: -200, behavior: 'smooth' });
-        }
+        };
 
         // Обновление видимости кнопок
-        function updateButtonVisibility() {
+        const updateButtonVisibility = () => {
             leftButton.style.display = scrollContainer.scrollLeft === 0 ? 'none' : 'flex';
             rightButton.style.display = (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) ? 'none' : 'flex';
-        }
+        };
 
-        // Обработчики для кнопок прокрутки
+        // Привязка обработчиков событий для кнопок прокрутки
         leftButton.addEventListener('click', () => {
             scrollLeft();
-            setTimeout(updateButtonVisibility, 300);
+            setTimeout(updateButtonVisibility, 300); // Обновление кнопок после прокрутки
         });
 
         rightButton.addEventListener('click', () => {
             scrollRight();
-            setTimeout(updateButtonVisibility, 300);
+            setTimeout(updateButtonVisibility, 300); // Обновление кнопок после прокрутки
         });
 
         // Проверка начального состояния кнопок
@@ -41,20 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Обработчик прокрутки контейнера
         scrollContainer.addEventListener('scroll', updateButtonVisibility);
-
-        // Обработчик клика по пустому пространству в drinks-container
-        container.addEventListener('click', (event) => {
-            if (!event.target.closest('.card')) {
-                closeAllCards();
-            }
-        });
-    });
-
-    // Настройка обработчиков для каждой карточки
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', toggleActiveClass);
     });
 });
+
 
 // Функция для закрытия всех активных карточек
 function closeAllCards() {
@@ -63,35 +52,4 @@ function closeAllCards() {
         card.style.height = ''; // Сброс высоты
         card.querySelector('.textDesc').style.opacity = 0; // Скрыть описание
     });
-}
-
-// Функция для обработки клика по карточке
-function toggleActiveClass(event) {
-    const clickedCard = event.currentTarget;
-
-    // Проверяем, есть ли у карточки класс active
-    const isActive = clickedCard.classList.contains('active');
-
-    // Убираем класс active у всех карточек и скрываем описание
-    closeAllCards();
-
-    // Если карточка не была активна, добавляем класс active к ней
-    if (!isActive) {
-        clickedCard.classList.add('active');
-
-        // Получаем высоту .text-wrapper
-        const textWrapper = clickedCard.querySelector('.text-wrapper');
-        const textHeight = textWrapper ? textWrapper.offsetHeight : 0;
-
-        // Устанавливаем новую высоту для карточки
-        const baseHeight = 288; // Базовая высота карточки
-        clickedCard.style.height = `${baseHeight + textHeight}px`;
-
-        // Плавное появление текста
-        setTimeout(() => {
-            const textDesc = clickedCard.querySelector('.textDesc');
-            textDesc.style.transition = 'opacity 0.3s ease';
-            textDesc.style.opacity = 1;
-        }, 100);
-    }
 }
