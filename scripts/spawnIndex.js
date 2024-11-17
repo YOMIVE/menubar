@@ -1,4 +1,4 @@
-import drinksCollection from './positions.js';
+import drinksCollection from './../data/drinks.js';
 
 // DOM элементы
 const languageSelector = document.querySelector('.language-selector');
@@ -9,12 +9,14 @@ const languageDropdown = document.querySelector('.language-dropdown');
 const pageTranslate = [
     { id: 'h3TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар' },
     { id: 'h3SignatureСocktails', varENG: 'Signature Сocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
+    { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
     { id: 'h3SC', varENG: 'SC', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
     { id: 'navBtn-TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар' },
     { id: 'navBtn-SignatureCoctails', varENG: 'Signature Cocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
     { id: 'navBtn-Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Ас мәзірі' },
     { id: 'navBtn-Snacks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закусци', varKAZ: 'Таңғы ас' },
-    { id: 'navBtn-Desserts', varENG: 'Desserts', varRUS: 'Десерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер' },
+    { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер' }
+,
 ];
 
 // Текущий язык
@@ -97,32 +99,51 @@ function createCard(drink) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.id = drink.id;
+    
+    if (drink.isOpen) {
+        const cardPhoto = document.createElement('img');
+        cardPhoto.src = drink.image;
+        cardPhoto.alt = drink.name;
+        cardPhoto.classList.add('cardPhoto');
 
-    const cardPhoto = document.createElement('img');
-    cardPhoto.src = drink.image;
-    cardPhoto.alt = drink.name;
-    cardPhoto.classList.add('cardPhoto');
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text');
+        textDiv.innerHTML = `
+            <p class="name">${drink.name}</p>
+            <p class="price">${drink.price}</p>
+        `;
 
-    const textDiv = document.createElement('div');
-    textDiv.classList.add('text');
-    textDiv.innerHTML = `
-        <p class="name">${drink.name}</p>
-        <p class="price">${drink.price}</p>
-    `;
+        const textWrapper = document.createElement('div');
+        textWrapper.classList.add('text-wrapper');
 
-    const textWrapper = document.createElement('div');
-    textWrapper.classList.add('text-wrapper');
+        const textDesc = document.createElement('div');
+        textDesc.classList.add('textDesc');
+        textDesc.innerHTML = `<p class="desc">${drink[`desc${currentLanguage}`]}</p>`;
 
-    const textDesc = document.createElement('div');
-    textDesc.classList.add('textDesc');
-    textDesc.innerHTML = `<p class="desc">${drink[`desc${currentLanguage}`]}</p>`;
+        textWrapper.appendChild(textDesc);
+        card.appendChild(cardPhoto);
+        card.appendChild(textDiv);
+        card.appendChild(textWrapper);
 
-    textWrapper.appendChild(textDesc);
-    card.appendChild(cardPhoto);
-    card.appendChild(textDiv);
-    card.appendChild(textWrapper);
+        return card;
+    } else {
+        const cardPhoto = document.createElement('img');
+        cardPhoto.src = drink.image;
+        cardPhoto.alt = drink.name;
+        cardPhoto.classList.add('cardPhoto');
 
-    return card;
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text');
+        textDiv.innerHTML = `
+            <p class="name">${drink.name}</p>
+            <p class="price">${drink.price}</p>
+        `;
+        card.appendChild(cardPhoto);
+        card.appendChild(textDiv);
+
+        return card;
+    }
+    
 }
 
 function spawnCards() {
@@ -150,6 +171,8 @@ function shouldIncludeDrink(drink, categoryClass) {
             return drink.id.startsWith('SC');
         case 'CF':
             return drink.id.startsWith('CF');
+        case 'DS':
+            return drink.id.startsWith('DS');
         case 'TOP':
             return drink.isTop;
         default:
@@ -198,12 +221,32 @@ function toggleActiveClass(event) {
 
 // Функция для закрытия всех активных карточек
 function closeAllCards() {
-    document.querySelectorAll('.card.active').forEach(card => {
+    const cards = document.querySelectorAll('.card.active');
+    if (cards.length === 0) return; // Если нет активных карт, просто выходим
+
+    cards.forEach(card => {
         card.classList.remove('active');
         card.style.height = ''; // Сброс высоты
-        card.querySelector('.textDesc').style.opacity = 0; // Скрыть описание
+        const textDesc = card.querySelector('.textDesc');
+        if (textDesc) { // Убедимся, что элемент существует
+            textDesc.style.opacity = 0; // Скрыть описание
+        }
     });
 }
 
+
 // Начальное создание карточек
 spawnCards();
+
+
+
+
+
+
+
+
+
+
+
+
+

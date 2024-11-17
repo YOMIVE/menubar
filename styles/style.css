@@ -221,9 +221,12 @@ header {
     display: none;
 }
 
-
-
-
+.nav-button.btn-affiche {
+    display: none;
+}
+.slider {
+    display: none;
+}
 
 
 

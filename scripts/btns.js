@@ -12,6 +12,34 @@ function scrollToTopDrinks() {
     }
 }
 
+function scrollToDesserts() {
+    var element = document.getElementById("h3Desserts");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Сдвигаем страницу, добавив 100px к положению элемента
+        window.scrollTo({
+            top: rect.top + window.scrollY - 150, // смещаем на 100 пикселей ниже
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToDishes() {
+    var element = document.getElementById("h3Dishes");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Сдвигаем страницу, добавив 100px к положению элемента
+        window.scrollTo({
+            top: rect.top + window.scrollY - 150, // смещаем на 100 пикселей ниже
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
 function scrollToSignatureСocktails() {
     var element = document.getElementById("h3SignatureСocktails");
     if (element) {

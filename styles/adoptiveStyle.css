@@ -24,6 +24,7 @@
         display: flex;
         justify-content: space-between;
         width: 100vw;
+        max-width: 100vw;
         margin: 0 0;
     }
 
@@ -38,7 +39,7 @@
         display: flex;
         justify-content: space-between;
         width: 100vw;
-        margin: 20px 0;
+        margin: 1rem 0;
     }
 
     .nav-bar-pc {
@@ -164,7 +165,8 @@
     /*Стили для карточек и секции*/
 
     section {
-        padding-top: 5rem;
+        padding-top: 4.5rem;
+
     }
 
     .section > h3 {
@@ -191,24 +193,28 @@
 
     .textGroup {
         position: absolute;
-        bottom: 2rem;
+        bottom: 3rem;
         left: 0.8rem;
         z-index: 15;
+        max-width: 84vw;
     }
     
     .textGroup > h2 {
         color: white;
         font-weight: 900;
+        font-size: 2.1rem;
     }
 
     .data-textGroup {
         color: #DDDDDD;
         font-weight: 300;
+        font-size: 1.4rem;
     }
     
     .desc-textGroup {
         color: #DDDDDD;
         font-weight: 500;
+        font-size: 1.4rem;
     }
 
     .gradient {
@@ -216,10 +222,83 @@
         background: linear-gradient(to bottom, #15161100, #151611);
         width: 100%;
         height: 10vh;
-        bottom: 0;
+        bottom: -2px;
         left: 0;
         z-index: 14;
     }
+
+
+
+    .slider {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+    
+    .affiche-container {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        max-width: 100vw;
+        width: 100%;
+    }
+    
+    .affiche-track {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        will-change: transform;
+        max-width: 100vw;
+    }
+    
+    .affiche {
+        flex: 0 0 100%; /* Каждая афиша занимает 100% ширины контейнера */
+        box-sizing: border-box;
+        max-width: 100vw;
+    }
+
+    .dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #ccc;
+        background: #333;
+        cursor: pointer;
+    }
+    
+    .dot.active {
+        background: #333;
+        background: #ccc;
+    }
+    
+    .nav-button.btn-affiche {
+        top: 40%;
+        height: 120px;
+    }
+    .nav-button.btn-affiche.right {
+        margin-right: 0rem;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

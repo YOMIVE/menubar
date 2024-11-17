@@ -10,6 +10,7 @@
 
 
 
+    <script type="module" src="../scripts/spawnAffiches.js"></script>
     <script type="module" src="../scripts/spawnIndex.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/adoptiveStyle.css">
@@ -46,9 +47,9 @@
             <ul>
                 <li><button id="navBtn-TopDrinks" onclick="scrollToTopDrinks()">Top Drinks</button></li>
                 <li><button id="navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()">Signature Сocktails</button></li>
-                <li><button id="navBtn-Dishes" onclick="scrollToSignatureСocktails()">Dishes</button></li>
+                <li><button id="navBtn-Dishes" onclick="scrollToDishes()">Dishes</button></li>
                 <li><button id="navBtn-Snacks" onclick="scrollToSignatureСocktails()">Snacks</button></li>
-                <li><button id="navBtn-Desserts" onclick="scrollToSignatureСocktails()">Desserts</button></li>
+                <li><button id="navBtn-Desserts" onclick="scrollToDesserts()">Desserts</button></li>
             </ul>
         </div>
 
@@ -65,6 +66,7 @@
 
 
     <section>
+        <!--
         <div class="affiche">
             <div class="textGroup">
                 <h2>Free Guitar</h2>
@@ -72,9 +74,18 @@
                 <p class="desc-textGroup">Free concert of guitar music.</p>
             </div>
             <div class="gradient"></div>
+        </div> -->
+
+        <div class="slider">
+            <button class="nav-button btn-affiche left">‹</button>
+            <div class="affiche-container">
+                <div class="affiche-track"></div>
+            </div>
+            <button class="nav-button btn-affiche right">›</button>
+            <div class="dots-container"></div>
         </div>
-
-
+        
+        
 
 
 
@@ -109,12 +120,30 @@
             <h3 id="h3SignatureСocktails">Signature Сocktails</h3>
             <div class="drinks-container">
                 <button class="nav-button left">‹</button>
-                <div class="scrollable CF"></div> 
+                <div class="scrollable SC"></div> 
+                <button class="nav-button right" >›</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3 id="h3Desserts">Desserts</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable DS"></div> 
+                <button class="nav-button right" >›</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3 id="h3Dishes">Dishes</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable DSH"></div> 
                 <button class="nav-button right" >›</button>
             </div>
         </div>
     </section>
     <script src="../scripts/btns.js"></script>
     <script src="../scripts/index.js"></script>
+    <script type="module" src="../scripts/spawnAffiches.js"></script>
+    <script type="module" src="../scripts/spawnIndex.js"></script>
 </body>
 </html>
