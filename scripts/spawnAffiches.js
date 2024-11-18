@@ -139,13 +139,17 @@ function spawnAffiches() {
     if (window.innerWidth > 600) {
         // Если ширина экрана больше 600 пикселей, скрываем слайдер
         slider.style.display = 'none';
+    } else if (affichesCollection.length > 0) {
+        // Если есть афиши и экран меньше 600 пикселей, показываем слайдер
+        slider.style.display = 'block';
     } else {
-        // Иначе показываем слайдер, если есть более одной афиши
-        slider.style.display = affichesCollection.length > 1 ? 'block' : 'none';
+        // Если нет афиш, скрываем слайдер
+        slider.style.display = 'none';
     }
 
     updateSlider();  // Обновляем слайдер
 }
+
 
 
 // Смена языка
