@@ -4,9 +4,12 @@ function scrollToTopDrinks() {
         // Получаем координаты элемента
         var rect = element.getBoundingClientRect();
 
-        // Сдвигаем страницу, добавив 100px к положению элемента
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
         window.scrollTo({
-            top: rect.top + window.scrollY - 150, // смещаем на 100 пикселей ниже
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
             behavior: 'smooth' // плавная прокрутка
         });
     }
@@ -18,9 +21,12 @@ function scrollToDesserts() {
         // Получаем координаты элемента
         var rect = element.getBoundingClientRect();
 
-        // Сдвигаем страницу, добавив 100px к положению элемента
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
         window.scrollTo({
-            top: rect.top + window.scrollY - 150, // смещаем на 100 пикселей ниже
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
             behavior: 'smooth' // плавная прокрутка
         });
     }
@@ -32,13 +38,17 @@ function scrollToDishes() {
         // Получаем координаты элемента
         var rect = element.getBoundingClientRect();
 
-        // Сдвигаем страницу, добавив 100px к положению элемента
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
         window.scrollTo({
-            top: rect.top + window.scrollY - 150, // смещаем на 100 пикселей ниже
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
             behavior: 'smooth' // плавная прокрутка
         });
     }
 }
+
 
 function scrollToSignatureСocktails() {
     var element = document.getElementById("h3SignatureСocktails");
@@ -46,13 +56,17 @@ function scrollToSignatureСocktails() {
         // Получаем координаты элемента
         var rect = element.getBoundingClientRect();
 
-        // Сдвигаем страницу, добавив 100px к положению элемента
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
         window.scrollTo({
-            top: rect.top + window.scrollY - 150, // смещаем на 100 пикселей ниже
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
             behavior: 'smooth' // плавная прокрутка
         });
     }
 }
+
 
 
 // Функция для открытия меню

@@ -7,17 +7,18 @@ const languageDropdown = document.querySelector('.language-dropdown');
 
 // Список переводов для заголовков
 const pageTranslate = [
-    { id: 'h3TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар' },
-    { id: 'h3SignatureСocktails', varENG: 'Signature Сocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
-    { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
-    { id: 'h3SC', varENG: 'SC', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
-    { id: 'navBtn-TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар' },
-    { id: 'navBtn-SignatureCoctails', varENG: 'Signature Cocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер' },
-    { id: 'navBtn-Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Ас мәзірі' },
-    { id: 'navBtn-Snacks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закусци', varKAZ: 'Таңғы ас' },
-    { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер' }
-,
+    { id: 'h3TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар', varARM: 'Լավագույն ըմպելիքներ', varBLR: 'Лепшыя Напоі' },
+    { id: 'h3SignatureСocktails', varENG: 'Signature Сocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер', varARM: 'Հեղինակային Կոկտեյլներ', varBLR: 'Аўтарскія Кактэйлі' },
+    { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер', varARM: 'Աղանդեր', varBLR: 'Дэсэрты' },
+    { id: 'h3Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Ас мәзірі', varARM: 'Ուտեստներ', varBLR: 'Стравы' },
+    { id: 'navBtn-TopDrinks', mobileId: 'mobile-navBtn-TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар', varARM: 'Լավագույն ըմպելիքներ', varBLR: 'Лепшыя Напоі' },
+    { id: 'navBtn-SignatureCoctails', mobileId: 'mobile-navBtn-SignatureCoctails', varENG: 'Signature Cocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер', varARM: 'Հեղինակային Կоктейльներ', varBLR: 'Аўтарскія Кактэйлі' },
+    { id: 'navBtn-Dishes', mobileId: 'mobile-navBtn-Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Ас мәзірі', varARM: 'Ուտեստներ', varBLR: 'Стравы' },
+    { id: 'navBtn-Snacks', mobileId: 'mobile-navBtn-Snacks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закусци', varKAZ: 'Таңғы ас', varARM: 'Խորտիկներ', varBLR: 'Закускі' },
+    { id: 'navBtn-Desserts', mobileId: 'mobile-navBtn-Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер', varARM: 'Աղանդեր', varBLR: 'Дэсэрты' },
 ];
+
+
 
 // Текущий язык
 let currentLanguage = 'ENG';
@@ -33,17 +34,19 @@ languageDropdown.addEventListener('click', (event) => {
     if (event.target.tagName === 'LI') {
         const newLanguage = event.target.dataset.lang;
 
-        // Сменить выбранный язык
+        // Обновляем язык для десктопного и мобильного меню
         updateLanguage(newLanguage);
+        updateMobileMenuLanguage(newLanguage);
 
-        // Обновить текст кнопки
+        // Обновляем текст кнопки
         selectedLanguageBtn.textContent = event.target.textContent;
 
-        // Скрыть выпадающий список
+        // Скрываем выпадающий список
         languageDropdown.classList.add('hidden');
         languageDropdown.classList.remove('visible');
     }
 });
+
 
 function updateLanguage(lang) {
     currentLanguage = lang;
@@ -71,7 +74,7 @@ function updateLanguageDropdown() {
     languageDropdown.innerHTML = ''; // Очищаем список
 
     // Добавляем все языки, кроме текущего
-    const languages = ['ENG', 'RUS', 'UKR', 'TUR', 'SRB', 'KAZ'];
+    const languages = ['ENG', 'RUS', 'UKR', 'TUR', 'SRB', 'KAZ', 'ARM', 'BLR'];
     languages.forEach(lang => {
         if (lang !== currentLanguage) {
             const listItem = document.createElement('li');
@@ -91,9 +94,29 @@ function getLanguageName(langCode) {
         TUR: 'TUR',
         SRB: 'SRB',
         KAZ: 'KAZ',
+        ARM: 'ARM',
+        BLR: 'BLR',
     };
     return languageNames[langCode];
 }
+
+function updateMobileMenuLanguage(language) {
+    pageTranslate.forEach(item => {
+        // Обновляем десктопное меню
+        const desktopButton = document.getElementById(item.id);
+        if (desktopButton) {
+            desktopButton.textContent = item[`var${language}`];
+        }
+
+        // Обновляем мобильное меню
+        const mobileButton = document.getElementById(item.mobileId);
+        if (mobileButton) {
+            mobileButton.textContent = item[`var${language}`];
+        }
+    });
+}
+
+
 
 function createCard(drink) {
     const card = document.createElement('div');

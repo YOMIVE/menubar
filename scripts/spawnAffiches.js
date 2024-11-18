@@ -1,38 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.affiche-track');
-    const affiches = affichesCollection.length;
-    let currentIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isSwiping = false;
 
-    function updateSlider() {
-        const afficheWidth = document.querySelector('.affiche').offsetWidth;
-        const offset = -currentIndex * afficheWidth;
-        track.style.transform = `translateX(${offset}px)`;
-        track.style.transition = 'transform 0.3s ease-in-out';
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        isSwiping = true;
     }
 
-    function scrollLeft() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
+    function handleTouchMove(event) {
+        if (!isSwiping) return;
+        currentX = event.touches[0].clientX;
+    }
+
+    function handleTouchEnd() {
+        if (!isSwiping) return;
+
+        const swipeDistance = currentX - startX;
+
+        if (swipeDistance > 50) {
+            navigateLeft(); // Листаем влево
+        } else if (swipeDistance < -50) {
+            navigateRight(); // Листаем вправо
         }
+
+        isSwiping = false;
     }
 
-    function scrollRight() {
-        if (currentIndex < affiches - 1) {
-            currentIndex++;
-            updateSlider();
-        }
-    }
+    track.addEventListener('touchstart', handleTouchStart);
+    track.addEventListener('touchmove', handleTouchMove);
+    track.addEventListener('touchend', handleTouchEnd);
 
-    // Обновление слайдера
-    createAffiche();
+    // Обновляем слайдер после создания афиш
     spawnAffiches();
     updateSlider();
-
-    // Привязываем кнопки
-    document.querySelector('.nav-button.left').addEventListener('click', scrollLeft);
-    document.querySelector('.nav-button.right').addEventListener('click', scrollRight);
 });
+
 
 // DOM элементы
 const languageSelector = document.querySelector('.language-selector');
@@ -138,11 +142,9 @@ function spawnAffiches() {
 
 // Смена языка
 function updateAffichesLanguage(lang) {
-    console.log('update');
-    
-    currentLanguage = lang; // Обновляем язык
+    currentLanguage = lang; // Обновляем текущий язык
     spawnAffiches(); // Перегенерируем афиши с новым языком
-    updateSlider();  // Перерисовываем слайдер
+    updateSlider(); // Перерисовываем слайдер
 }
 
 // Инициализация слайдера
@@ -154,18 +156,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Вызов при смене языка
 languageDropdown.addEventListener('click', (event) => {
     if (event.target.tagName === 'LI') {
         const newLanguage = event.target.dataset.lang;
-        
-        // Обновление языка для карточек и афиш
-        updateLanguage(newLanguage);
         updateAffichesLanguage(newLanguage);
 
-        // Обновление текста кнопки
+        // Обновляем кнопку с текущим языком
         selectedLanguageBtn.textContent = event.target.textContent;
 
-        // Скрыть выпадающий список
+        // Закрываем выпадающий список
         languageDropdown.classList.add('hidden');
         languageDropdown.classList.remove('visible');
     }

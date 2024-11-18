@@ -26,18 +26,21 @@
         width: 100vw;
         max-width: 100vw;
         margin: 0 0;
+        filter: drop-shadow(0 4px 6px var(--primary-color));
     }
 
     header > .logoAndBtns > h1 {
         color: var(--white);
         margin-left: 0.8rem;
+        font-size: 1.6rem;
+        padding: 0.3rem 0 0 0 ;
     }
-
-
-
+    
     .logoAndBtns {
         display: flex;
         justify-content: space-between;
+        align-content: center;
+        flex-wrap: wrap;
         width: 100vw;
         margin: 1rem 0;
     }
@@ -48,6 +51,14 @@
 
     .btns {
         margin-right: 0.8rem;
+    }
+
+    .btns > a:hover {
+        transform: translateY(0px);
+    }
+
+    .card:hover {
+        transform: translateY(0px);
     }
 
     .btns > a {
@@ -87,7 +98,24 @@
         border-left: 2px solid white;
     }
 
+    .content-nav-bar-phone > ul {
+        list-style-type: none;
+        margin: 4.5rem 0 0 1rem;
+    }
+ 
+    .content-nav-bar-phone > ul > li {
+        margin-top: 0.7rem;
+        border: none;
+    }
 
+    .content-nav-bar-phone > ul > li > button{
+        border: none;
+        background: none;
+        font-size: 0.8rem;
+        color: white;
+        font-weight: 600;
+    }
+    
     .nav-bar-phone.active {
         left: 0vw;
     }
