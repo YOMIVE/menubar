@@ -16,6 +16,9 @@ const pageTranslate = [
     { id: 'navBtn-Dishes', mobileId: 'mobile-navBtn-Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Ас мәзірі', varARM: 'Ուտեստներ', varBLR: 'Стравы' },
     { id: 'navBtn-Snacks', mobileId: 'mobile-navBtn-Snacks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закусци', varKAZ: 'Таңғы ас', varARM: 'Խորտիկներ', varBLR: 'Закускі' },
     { id: 'navBtn-Desserts', mobileId: 'mobile-navBtn-Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер', varARM: 'Աղանդեր', varBLR: 'Дэсэрты' },
+    { id: 'navBtn-DrinksMap', mobileId: 'mobile-navBtn-DrinksMap', varENG: 'Drinks Map', varRUS: 'Карта Напитков', varUKR: 'Карта Напоїв', varTUR: 'İçecek Haritası', varSRB: 'Мапа пића', varKAZ: 'Сусындар картасы', varARM: 'Ըմպելիքների քարտեզ', varBLR: 'Карта Напояў' },
+    { id: 'navBtn-DishesMap', mobileId: 'mobile-navBtn-DishesMap', varENG: 'Dishes Map', varRUS: 'Карта Блюд', varUKR: 'Карта Страв', varTUR: 'Yemek Haritası', varSRB: 'Мапа јела', varKAZ: 'Ас мәзірі картасы', varARM: 'Ուտեստների քարտեզ', varBLR: 'Карта Страв' },
+    { id: 'navBtn-MainPage', mobileId: 'mobile-navBtn-MainPage', varENG: 'Main Page', varRUS: 'Главная Страница', varUKR: 'Головна Сторінка', varTUR: 'Ana Sayfa', varSRB: 'Главна Страница', varKAZ: 'Басты Бет', varARM: 'Գլխավոր Էջ', varBLR: 'Галоўная Старонка' },
 ];
 
 
@@ -51,23 +54,30 @@ languageDropdown.addEventListener('click', (event) => {
 function updateLanguage(lang) {
     currentLanguage = lang;
 
-    // Обновляем текст кнопки
+    // Обновляем текст кнопки языка
     selectedLanguageBtn.textContent = getLanguageName(lang);
 
     // Обновляем выпадающий список языков
     updateLanguageDropdown();
 
-    // Обновляем заголовки
+    // Обновляем заголовки и кнопки
     pageTranslate.forEach(translation => {
         const element = document.getElementById(translation.id);
         if (element) {
             element.textContent = translation[`var${lang}`];
         }
+
+        // Обновляем мобильное меню, если есть соответствующий ID
+        const mobileElement = document.getElementById(translation.mobileId);
+        if (mobileElement) {
+            mobileElement.textContent = translation[`var${lang}`];
+        }
     });
 
-    // Обновляем карточки
+    // Обновляем другие элементы, если необходимо
     spawnCards();
 }
+
 
 // Функция для обновления выпадающего списка
 function updateLanguageDropdown() {

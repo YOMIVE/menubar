@@ -2,7 +2,7 @@ const dishesCollection = [
     {
         id: 'DSH001',
         name: 'EGGG',
-        price: '',
+        price: '2$',
         descENG: '',
         descRUS: '',
         descUKR: '',
@@ -11,6 +11,7 @@ const dishesCollection = [
         descKAZ: '',
         image: '../data/drinksImages/Coffee 1.png',
         isTop: false, 
+        isOpen: true,
     }
 ];
 

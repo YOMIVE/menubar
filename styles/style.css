@@ -76,7 +76,7 @@ header {
 }
 
 .nav-bar-pc > ul {
-    margin: 10px 200px;
+    margin: 10px 150px;
     list-style-type: none;
     padding-left: 0; /* Убирает отступ слева, если нужно */
     padding: auto;
@@ -95,12 +95,27 @@ header {
     background: none;
     color: white;
     transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-right: 1.1rem;
 }
-.nav-bar-pc > ul li > button:hover {
+.nav-bar-pc > ul li a {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 1.1rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition: all 0.3s ease-in-out;
+}
+.nav-bar-pc > ul li > button:hover,
+.nav-bar-pc > ul li a:hover {
     color: var(--btn-gray-color);
     transform: translateY(-1px); /* Поднимаем текст на 2 пикселя при наведении */
 }
-
+.last-link {
+    margin-right: 1rem;
+}
 
 .language-selector {
     position: relative;
@@ -133,8 +148,8 @@ header {
 }
 
 body.dark-mode .selected-language {
-    background-color: var(--primary-color); /* Тёмный фон */
-    color: var(--white); /* Светлый текст */
+    background-color: var(--white);
+    color: var(--primary-color);
 }
 
 .selected-language:hover {

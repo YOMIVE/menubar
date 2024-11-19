@@ -104,7 +104,14 @@
 
     .content-nav-bar-phone > ul {
         list-style-type: none;
-        margin: 4.5rem 0 0 1rem;
+        margin: 4.5rem 1.2rem 0 1rem;
+    }
+
+    .content-nav-bar-phone > ul > li > hr {
+        margin-top: 0.7rem;
+        width: 100%;
+        background: #fff;
+        border-width: 0.5px;
     }
  
     .content-nav-bar-phone > ul > li {
@@ -118,6 +125,12 @@
         font-size: 0.8rem;
         color: white;
         font-weight: 600;
+    }
+    .content-nav-bar-phone > ul > li > a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        font-size: 0.8rem;
     }
     
     .nav-bar-phone.active {
