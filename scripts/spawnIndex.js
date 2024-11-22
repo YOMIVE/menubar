@@ -1,4 +1,6 @@
 import drinksCollection from './../data/drinks.js';
+import dishesCollection from './../data/dishes.js';
+
 
 // DOM элементы
 const languageSelector = document.querySelector('.language-selector');
@@ -7,6 +9,9 @@ const languageDropdown = document.querySelector('.language-dropdown');
 
 // Список переводов для заголовков
 const pageTranslate = [
+    { id: 'h4Drinks', varENG: 'Drinks', varRUS: 'Напитки', varUKR: 'Напої', varTUR: 'İçecekler', varSRB: 'Пића', varKAZ: 'Сусындар', varARM: 'Ըմպելիքներ', varBLR: 'Напоі' },
+    { id: 'h4Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Тамақтар', varARM: 'Ուտեստներ', varBLR: 'Стравы' },
+    { id: 'h3Top', mobileId: 'mobile-h3Top', varENG: 'Top', varRUS: 'Лучшее', varUKR: 'Найкраще', varTUR: 'En İyisi', varSRB: 'Најбоље', varKAZ: 'Үздік', varARM: 'Լավագույնը', varBLR: 'Лепшае' },
     { id: 'h3TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар', varARM: 'Լավագույն ըմպելիքներ', varBLR: 'Лепшыя Напоі' },
     { id: 'h3SignatureСocktails', varENG: 'Signature Сocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер', varARM: 'Հեղինակային Կոկտեյլներ', varBLR: 'Аўтарскія Кактэйлі' },
     { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер', varARM: 'Աղանդեր', varBLR: 'Дэсэрты' },
@@ -20,8 +25,6 @@ const pageTranslate = [
     { id: 'navBtn-DishesMap', mobileId: 'mobile-navBtn-DishesMap', varENG: 'Dishes Map', varRUS: 'Карта Блюд', varUKR: 'Карта Страв', varTUR: 'Yemek Haritası', varSRB: 'Мапа јела', varKAZ: 'Ас мәзірі картасы', varARM: 'Ուտեստների քարտեզ', varBLR: 'Карта Страв' },
     { id: 'navBtn-MainPage', mobileId: 'mobile-navBtn-MainPage', varENG: 'Main Page', varRUS: 'Главная Страница', varUKR: 'Головна Сторінка', varTUR: 'Ana Sayfa', varSRB: 'Главна Страница', varKAZ: 'Басты Бет', varARM: 'Գլխավոր Էջ', varBLR: 'Галоўная Старонка' },
 ];
-
-
 
 // Текущий язык
 let currentLanguage = 'ENG';
@@ -185,11 +188,15 @@ function spawnCards() {
         container.innerHTML = ''; // Очищаем контейнер
 
         const categoryClass = Array.from(container.classList).find(cat => cat !== 'scrollable');
-        drinksCollection.forEach(drink => {
-            if (shouldIncludeDrink(drink, categoryClass)) {
-                const card = createCard(drink);
-                container.appendChild(card);
-            }
+
+        // Универсальная обработка обеих коллекций
+        [drinksCollection, dishesCollection].forEach(collection => {
+            collection.forEach(item => {
+                if (shouldIncludeDrink(item, categoryClass)) {
+                    const card = createCard(item);
+                    container.appendChild(card);
+                }
+            });
         });
     });
 
@@ -197,21 +204,27 @@ function spawnCards() {
     attachCardClickHandlers();
 }
 
+
+
+
 // Фильтруем напитки по категории
-function shouldIncludeDrink(drink, categoryClass) {
+function shouldIncludeDrink(item, categoryClass) {
     switch (categoryClass) {
         case 'SC':
-            return drink.id.startsWith('SC');
-        case 'CF':
-            return drink.id.startsWith('CF');
+            return item.id.startsWith('SC'); // Напитки (Signature Cocktails)
+        case 'DSH':
+            return item.id.startsWith('DSH'); // Блюда
         case 'DS':
-            return drink.id.startsWith('DS');
+            return item.id.startsWith('DS'); // Десерты
         case 'TOP':
-            return drink.isTop;
+            return item.isTop;
+        case 'CO':
+            return item.id.startsWith('CO');
         default:
             return false;
     }
 }
+
 
 // Привязка обработчиков событий к карточкам
 function attachCardClickHandlers() {

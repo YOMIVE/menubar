@@ -1,5 +1,22 @@
 function scrollToTopDrinks() {
-    var element = document.getElementById("h3TopDrinks");
+    var element = document.getElementById("mobile-h3Top");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToTop() {
+    var element = document.getElementById("h3Top");
     if (element) {
         // Получаем координаты элемента
         var rect = element.getBoundingClientRect();

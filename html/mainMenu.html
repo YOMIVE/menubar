@@ -17,7 +17,6 @@
 
     <script type="module" src="../scripts/index.js"></script>
 
-
     <title>Main Page</title>
 </head>
 <body>
@@ -30,14 +29,14 @@
                     <ul class="language-dropdown hidden">
                         <li data-lang="RUS">RUS</li>
                         <li data-lang="UKR">UKR</li>
-                        <li data-lang="BLR">BLR</li>
+                        <li data-lang="TUR">TUR</li>
                         <li data-lang="SRB">SRB</li>
                         <li data-lang="KAZ">KAZ</li>
                         <li data-lang="ARM">ARM</li>
-                        <li data-lang="TUR">TUR</li>
+                        <li data-lang="BLR">BLR</li>
                     </ul>
-                    
                 </div>
+                
                 
                 
                 <a href="https://www.instagram.com/lemontree.budva/"><img src="../images/svg/btn-insta.svg" alt="instagram"></a>
@@ -50,7 +49,7 @@
             <ul>
                 <li><a id="navBtn-DrinksMap" href="drinksMap.html">Drinks Map</a></li>
                 <li class="last-link"><a id="navBtn-DishesMap" href="dishesMap.html">Dishes Map</a></li>
-                <li><button id="navBtn-TopDrinks" onclick="scrollToTopDrinks()">Top Drinks</button></li>
+                <li><button id="navBtn-Top" onclick="scrollToTop()">Top</button></li>
                 <li><button id="navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()">Signature Сocktails</button></li>
                 <li><button id="navBtn-Dishes" onclick="scrollToDishes()">Dishes</button></li>
                 <li><button id="navBtn-Snacks" onclick="scrollToSignatureСocktails()">Snacks</button></li>
@@ -66,7 +65,7 @@
                 <ul>
                     <li><a id="mobile-navBtn-DrinksMap" href="drinksMap.html">Drinks Map</a></li>
                     <li><a id="mobile-navBtn-DishesMap" href="dishesMap.html">Dishes Map</a><hr></li>
-                    <li><button id="mobile-navBtn-TopDrinks" onclick="scrollToTopDrinks()">Top Drinks</button></li>
+                    <li><button id="navBtn-Top" onclick="scrollToTop()">Top</button></li>
                     <li><button id="mobile-navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()">Signature Сocktails</button></li>
                     <li><button id="mobile-navBtn-Dishes" onclick="scrollToDishes()">Dishes</button></li>
                     <li><button id="mobile-navBtn-Snacks" onclick="scrollToSignatureСocktails()">Snacks</button></li>
@@ -110,7 +109,7 @@
 
 
         <div class="section">
-            <h3 id="h3TopDrinks">Top Drinks</h3>
+            <h3 id="h3Top">Top</h3>
             <div class="drinks-container">
                 <button class="nav-button left">‹</button>
                 <div class="scrollable TOP">
@@ -135,6 +134,14 @@
             <div class="drinks-container">
                 <button class="nav-button left">‹</button>
                 <div class="scrollable SC"></div> 
+                <button class="nav-button right" >›</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3 id="h3Сocktails">Сocktails</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable CO"></div> 
                 <button class="nav-button right" >›</button>
             </div>
         </div>
