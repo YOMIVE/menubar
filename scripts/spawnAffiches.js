@@ -1,3 +1,52 @@
+// Добавление свайпа для slider-for-scroll
+function addSwipeHandlersForSlider() {
+    const sliderForScroll = document.querySelector('.slider-for-scroll');
+    if (!sliderForScroll) return;
+
+    let startX = 0;
+    let currentX = 0;
+    let isSwiping = false;
+
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        isSwiping = true;
+    }
+
+    function handleTouchMove(event) {
+        if (!isSwiping) return;
+        currentX = event.touches[0].clientX;
+    }
+
+    function handleTouchEnd() {
+        if (!isSwiping) return;
+
+        const swipeDistance = currentX - startX;
+        if (swipeDistance > 50) {
+            navigateLeft(); // Листаем влево
+        } else if (swipeDistance < -50) {
+            navigateRight(); // Листаем вправо
+        }
+        isSwiping = false;
+    }
+
+    sliderForScroll.addEventListener('touchstart', handleTouchStart, { passive: false });
+    sliderForScroll.addEventListener('touchmove', handleTouchMove, { passive: false });
+    sliderForScroll.addEventListener('touchend', handleTouchEnd);
+}
+
+// Вызываем функцию свайпа после загрузки DOM
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSlider(); // Существующая функция
+    addSwipeHandlersForSlider(); // Новая логика для свайпов
+});
+
+
+
+
+
+
+
+
 
 // Импортируем коллекцию афиш
 import affichesCollection from './../data/affiches.js';
