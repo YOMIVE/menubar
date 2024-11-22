@@ -1,62 +1,37 @@
-
-
-// Вызываем функцию свайпа после загрузки DOM
-document.addEventListener('DOMContentLoaded', () => {
-    initializeSlider(); // Существующая функция
-    addSwipeHandlersForSlider(); // Новая логика для свайпов
-});
-
-
-
-
-
-
-
-
-
-// Импортируем коллекцию афиш
 import affichesCollection from './../data/affiches.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    initializeSlider();
-});
 
 let currentLanguage = 'ENG'; // Начальный язык
 let currentIndex = 0; // Текущий индекс афиши
 
-const languageDropdown = document.querySelector('.language-dropdown');
-if (!languageDropdown) {
-    console.error('Language dropdown not found');
-} else {
-    languageDropdown.classList.remove('hidden');
-}
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSlider();
+    setupLanguageSwitcher();
+});
 
 // Инициализация слайдера
 function initializeSlider() {
     const track = document.querySelector('.affiche-track');
     const dotsContainer = document.querySelector('.dots-container');
+    const leftButton = document.querySelector('.nav-button.left');
+    const rightButton = document.querySelector('.nav-button.right');
 
-    if (!track || !dotsContainer) {
-        console.error("Elements for the slider are not found.");
+    if (!track || !dotsContainer || !leftButton || !rightButton) {
+        console.error("Essential slider elements are missing.");
         return;
     }
 
-    // Добавляем обработчики свайпов
+    // Генерация афиш
+    spawnAffiches();
+
+    // Настройка кнопок навигации
+    leftButton.addEventListener('click', navigateLeft);
+    rightButton.addEventListener('click', navigateRight);
+
+    // Обработчики свайпов
     addSwipeHandlers(track);
 
-    // Генерация афиш и обновление слайдера
-    spawnAffiches();
-    setupLanguageSwitcher();
+    // Обновление состояния слайдера
     updateSlider();
-
-    // Навигация кнопками
-    document.querySelector('.nav-button.left').addEventListener('click', navigateLeft);
-    document.querySelector('.nav-button.right').addEventListener('click', navigateRight);
-
-    // Смена языка
-    setupLanguageSwitcher();
 }
 
 // Генерация афиш
@@ -70,8 +45,6 @@ function spawnAffiches() {
         const afficheElement = createAffiche(affiche);
         track.appendChild(afficheElement);
     });
-
-    updateSlider(); // Обновляем слайдер после добавления афиш
 }
 
 // Создание афиши
@@ -91,24 +64,24 @@ function createAffiche(affiche) {
     return afficheDiv;
 }
 
-// Обновление слайдера
+// Обновление состояния слайдера
 function updateSlider() {
     const track = document.querySelector('.affiche-track');
     const affiches = document.querySelectorAll('.affiche');
 
     if (!affiches.length) {
-        console.error('No affiches available to update slider.');
+        console.error("No affiches available for slider.");
         return;
     }
 
-    const afficheWidth = affiches[0].offsetWidth; // Ширина одной афиши
+    const afficheWidth = affiches[0].offsetWidth;
     const offset = -currentIndex * afficheWidth;
 
     track.style.transform = `translateX(${offset}px)`;
     track.style.transition = 'transform 0.3s ease-in-out';
 
-    updateDots(); // Обновляем точки
-    updateButtonsVisibility(); // Обновляем видимость кнопок
+    updateDots();
+    updateButtonsVisibility();
 }
 
 // Обновление точек
@@ -116,8 +89,7 @@ function updateDots() {
     const dotsContainer = document.querySelector('.dots-container');
     if (!dotsContainer) return;
 
-    dotsContainer.innerHTML = ''; // Очистка
-
+    dotsContainer.innerHTML = '';
     affichesCollection.forEach((_, index) => {
         const dot = document.createElement('span');
         dot.classList.add('dot');
@@ -130,8 +102,6 @@ function updateDots() {
 function updateButtonsVisibility() {
     const leftButton = document.querySelector('.nav-button.left');
     const rightButton = document.querySelector('.nav-button.right');
-
-    if (!leftButton || !rightButton) return;
 
     leftButton.style.display = currentIndex === 0 ? 'none' : 'flex';
     rightButton.style.display = currentIndex === affichesCollection.length - 1 ? 'none' : 'flex';
@@ -153,48 +123,34 @@ function navigateRight() {
     }
 }
 
-// Обработчики свайпов
+// Добавление обработчиков свайпов
 function addSwipeHandlers(track) {
     let startX = 0;
     let currentX = 0;
-    let isSwiping = false;
 
-    function handleTouchStart(event) {
+    track.addEventListener('touchstart', (event) => {
         startX = event.touches[0].clientX;
-        isSwiping = true;
-    }
+    });
 
-    function handleTouchMove(event) {
-        if (!isSwiping) return;
+    track.addEventListener('touchmove', (event) => {
         currentX = event.touches[0].clientX;
-    }
+    });
 
-    function handleTouchEnd() {
-        if (!isSwiping) return;
-
+    track.addEventListener('touchend', () => {
         const swipeDistance = currentX - startX;
-
         if (swipeDistance > 30) {
-            navigateLeft(); // Листаем влево
+            navigateLeft();
         } else if (swipeDistance < -30) {
-            navigateRight(); // Листаем вправо
+            navigateRight();
         }
-
-        isSwiping = false;
-    }
-
-    track.addEventListener('touchstart', handleTouchStart, { passive: false });
-    track.addEventListener('touchmove', handleTouchMove, { passive: false });
-    track.addEventListener('touchend', handleTouchEnd, { passive: false });
+    });
 }
 
-// Установка переключателя языка
 function setupLanguageSwitcher() {
-    const languageSelector = document.querySelector('.language-selector');
     const selectedLanguageBtn = document.querySelector('.selected-language');
     const languageDropdown = document.querySelector('.language-dropdown');
 
-    if (!languageSelector || !selectedLanguageBtn || !languageDropdown) {
+    if (!selectedLanguageBtn || !languageDropdown) {
         console.error('Language switcher elements not found.');
         return;
     }
@@ -202,15 +158,15 @@ function setupLanguageSwitcher() {
     // Переключение видимости выпадающего списка
     selectedLanguageBtn.addEventListener('click', () => {
         const isVisible = languageDropdown.classList.contains('visible');
+        languageDropdown.classList.toggle('visible', !isVisible);
+        languageDropdown.classList.toggle('hidden', isVisible);
+    });
 
-        if (isVisible) {
-            // Скрываем список
-            languageDropdown.classList.remove('visible');
+    // Закрытие выпадающего списка при клике вне него
+    document.addEventListener('click', (event) => {
+        if (!selectedLanguageBtn.contains(event.target) && !languageDropdown.contains(event.target)) {
             languageDropdown.classList.add('hidden');
-        } else {
-            // Показываем список
-            languageDropdown.classList.remove('hidden');
-            languageDropdown.classList.add('visible');
+            languageDropdown.classList.remove('visible');
         }
     });
 
@@ -229,14 +185,19 @@ function setupLanguageSwitcher() {
         }
     });
 
-    // Закрытие выпадающего списка при клике вне его
-    document.addEventListener('click', (event) => {
-        if (!languageSelector.contains(event.target)) {
-            languageDropdown.classList.add('hidden');
-            languageDropdown.classList.remove('visible');
-        }
+    selectedLanguageBtn.addEventListener('click', () => {
+        console.log('Button clicked!');
     });
+    selectedLanguageBtn.addEventListener('click', () => {
+        const isVisible = languageDropdown.classList.contains('visible');
+        languageDropdown.classList.toggle('visible', !isVisible);
+        languageDropdown.classList.toggle('hidden', isVisible);
+    
+        console.log('Dropdown classes:', languageDropdown.classList);
+    });
+    
 }
+
 
 // Обновление языка
 function updateLanguage(lang) {
