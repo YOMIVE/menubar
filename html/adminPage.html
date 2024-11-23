@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/adminPage.css">
+
+    <title>Admin Page</title>
+</head>
+<body>
+    <header>
+        <h1>Admin Page</h1>
+    </header>
+    <main>
+        <section id="item-creation">
+            <h2>Create Item</h2>
+            <form id="item-form">
+                <label>
+                    Type:
+                    <button type="button" id="type-food" class="type-btn">Food</button>
+                    <button type="button" id="type-drink" class="type-btn">Drink</button>
+                </label>
+                <input type="file" id="item-image" accept="image/png" required>
+                <label>
+                    Name: <input type="text" id="item-name" required>
+                </label>
+                <label>
+                    Price: <input type="text" id="item-price" required>
+                </label>
+                <label>
+                    Category:
+                    <div id="categories-list"></div>
+                </label>
+                <label>
+                    Is Top: <input type="checkbox" id="is-top">
+                </label>
+                <label>
+                    Needs Description: <input type="checkbox" id="needs-description">
+                </label>
+                <div id="description-fields" style="display: none;">
+                    <label>ENG: <textarea id="desc-eng"></textarea></label>
+                    <label>RUS: <textarea id="desc-rus"></textarea></label>
+                    <label>UKR: <textarea id="desc-ukr"></textarea></label>
+                    <label>TUR: <textarea id="desc-tur"></textarea></label>
+                    <label>SRB: <textarea id="desc-srb"></textarea></label>
+                    <label>KAZ: <textarea id="desc-kaz"></textarea></label>
+                    <label>ARM: <textarea id="desc-arm"></textarea></label>
+                    <label>BLR: <textarea id="desc-blr"></textarea></label>
+                </div>
+                <button type="submit" id="save-item">Save Item</button>
+            </form>
+        </section>
+
+        <section id="affiche-creation">
+            <h2>Create Affiche</h2>
+            <form id="affiche-form">
+                <input type="file" id="affiche-image" accept="image/png" required>
+                <label>
+                    ENG Name: <input type="text" id="affiche-name-eng" required>
+                </label>
+                <label>
+                    Date: <input type="text" id="affiche-date" required>
+                </label>
+                <button type="submit" id="save-affiche">Save Affiche</button>
+            </form>
+        </section>
+
+        <section id="export-section">
+            <h2>Export Collections</h2>
+            <button id="export-dishes">Export Dishes</button>
+            <button id="export-drinks">Export Drinks</button>
+            <button id="export-affiches">Export Affiches</button>
+        </section>
+    </main>
+    <script src="../scripts/adminPage.js" type="module"></script>
+
+</body>
+</html>

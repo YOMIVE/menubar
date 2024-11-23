@@ -11,7 +11,8 @@ const languageDropdown = document.querySelector('.language-dropdown');
 const pageTranslate = [
     { id: 'h4Drinks', varENG: 'Drinks', varRUS: 'Напитки', varUKR: 'Напої', varTUR: 'İçecekler', varSRB: 'Пића', varKAZ: 'Сусындар', varARM: 'Ըմպելիքներ', varBLR: 'Напоі' },
     { id: 'h4Dishes', varENG: 'Dishes', varRUS: 'Блюда', varUKR: 'Страви', varTUR: 'Yemekler', varSRB: 'Јела', varKAZ: 'Тамақтар', varARM: 'Ուտեստներ', varBLR: 'Стравы' },
-    { id: 'h3Top', mobileId: 'mobile-h3Top', varENG: 'Top', varRUS: 'Лучшее', varUKR: 'Найкраще', varTUR: 'En İyisi', varSRB: 'Најбоље', varKAZ: 'Үздік', varARM: 'Լավագույնը', varBLR: 'Лепшае' },
+    { id: 'h3Top', mobileId: 'mobile-navBtn-Top', varENG: 'Top', varRUS: 'Лучшее', varUKR: 'Найкраще', varTUR: 'En İyisi', varSRB: 'Најбоље', varKAZ: 'Үздік', varARM: 'Լավագույնը', varBLR: 'Лепшае' },
+    { id: 'navBtn-Top', mobileId: 'mobile-navBtn-Top', varENG: 'Top', varRUS: 'Лучшее', varUKR: 'Найкраще', varTUR: 'En İyisi', varSRB: 'Најбоље', varKAZ: 'Үздік', varARM: 'Լավագույնը', varBLR: 'Лепшае' },
     { id: 'h3TopDrinks', varENG: 'Top Drinks', varRUS: 'Лучшие Напитки', varUKR: 'Кращі Напої', varTUR: 'En İyi İçecekler', varSRB: 'Најбоља пића', varKAZ: 'Үздік сусындар', varARM: 'Լավագույն ըմպելիքներ', varBLR: 'Лепшыя Напоі' },
     { id: 'h3SignatureСocktails', varENG: 'Signature Сocktails', varRUS: 'Авторские Коктейли', varUKR: 'Авторські Коктейлі', varTUR: 'İmza Kokteyller', varSRB: 'Потпис коктели', varKAZ: 'Авторлық коктейльдер', varARM: 'Հեղինակային Կոկտեյլներ', varBLR: 'Аўтарскія Кактэйлі' },
     { id: 'h3Desserts', varENG: 'Desserts', varRUS: 'Дессерты', varUKR: 'Десерти', varTUR: 'Tatlılar', varSRB: 'Десерти', varKAZ: 'Десерттер', varARM: 'Աղանդեր', varBLR: 'Дэсэрты' },
