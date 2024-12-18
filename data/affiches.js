@@ -19,7 +19,7 @@ const affichesCollection = [
         descriptionARM: 'Կիթառի երաժշտության անվճար համերգ:',
         descriptionBLR: 'Бясплатны канцэрт гітарнай музыкі.',
         image: '../data/afficheImages/affiche-1.png',
-    },
+    },/*
     {
         id: 'A002',
         mainTextENG: 'Jazz Night',
@@ -40,7 +40,7 @@ const affichesCollection = [
         descriptionARM: 'Կիթառի երաժշտության անվճար համերգ:',
         descriptionBLR: 'Бясплатны канцэрт гітарнай музыкі.',
         image: '../data/afficheImages/affiche-2.png',
-    },
+    },*/
 ];
 
 
