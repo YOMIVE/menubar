@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <script type="module" src="../scripts/spawnAffiches.js"></script>
+    <script type="module" src="../scripts/spawnIndex.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/adoptiveStyle.css">
+
+    <script type="module" src="../scripts/index.js"></script>
+
+    <title data-translate="mainPage">Main Page</title>
+</head>
+<body>
+    <header>
+        <div class="logoAndBtns">
+            <h1 class="logo">LemonTree</h1>
+            <div class="btns">
+                <div class="language-selector">
+                    <button class="selected-language">ENG</button>
+                    <ul class="language-dropdown hidden">
+                        <li data-lang="RUS">RUS</li>
+                        <li data-lang="UKR">UKR</li>
+                        <li data-lang="TUR">TUR</li>
+                        <li data-lang="SRB">SRB</li>
+                        <li data-lang="KAZ">KAZ</li>
+                        <li data-lang="ARM">ARM</li>
+                        <li data-lang="BLR">BLR</li>
+                    </ul>
+                </div>
+                <a href="https://www.instagram.com/lemontree.budva/">
+                    <img src="../images/svg/btn-insta.svg" alt="instagram">
+                </a>
+                <button class="btn-hamburger" onclick="openPhoneMenu()">
+                    <img src="../images/svg/btn-hamburder.svg" alt="hamburger">
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-bar-pc">
+            <hr>
+            <ul>
+                <li><a id="navBtn-DrinksMap" href="drinksMap.html" data-translate="drinksMap">Drinks Map</a></li>
+                <li><a id="navBtn-DishesMap" href="dishesMap.html" data-translate="dishesMap">Dishes Map</a></li>
+                <li><button id="navBtn-Top" onclick="scrollToTop()" data-translate="top">Top</button></li>
+                <li><button id="navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()" data-translate="signatureCocktails">Signature Cocktails</button></li>
+                <li><button id="navBtn-Dishes" onclick="scrollToDishes()" data-translate="dishes">Dishes</button></li>
+                <li><button id="navBtn-Snacks" onclick="scrollToSnacks()" data-translate="snacks">Snacks</button></li>
+                <li><button id="navBtn-Desserts" onclick="scrollToDesserts()" data-translate="desserts">Desserts</button></li>
+            </ul>
+        </div>
+
+        <div class="nav-bar-phone">
+            <button onclick="closePhoneMenu()" class="btn-nav-bar-phone"></button>
+            <div class="content-nav-bar-phone">
+                <ul>
+                    <li><a id="mobile-navBtn-DrinksMap" href="drinksMap.html" data-translate="drinksMap">Drinks Map</a></li>
+                    <li><a id="mobile-navBtn-DishesMap" href="dishesMap.html" data-translate="dishesMap">Dishes Map</a></li>
+                    <li><button id="mobile-navBtn-Top" onclick="scrollToTop()" data-translate="top">Top</button></li>
+                    <li><button id="mobile-navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()" data-translate="signatureCocktails">Signature Cocktails</button></li>
+                    <li><button id="mobile-navBtn-Dishes" onclick="scrollToDishes()" data-translate="dishes">Dishes</button></li>
+                    <li><button id="mobile-navBtn-Snacks" onclick="scrollToSnacks()" data-translate="snacks">Snacks</button></li>
+                    <li><button id="mobile-navBtn-Desserts" onclick="scrollToDesserts()" data-translate="desserts">Desserts</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="slider-for-scroll">
+            <div class="slider">
+                <button class="nav-button btn-affiche left">‹</button>
+                <div class="affiche-container">
+                    <div class="affiche-track"></div>
+                </div>
+                <button class="nav-button btn-affiche right">›</button>
+                <div class="dots-container"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="h3Top" data-translate="top">Top</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable TOP"></div>
+                <button class="nav-button right">›</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3 id="h3SignatureСocktails" data-translate="signatureCocktails">Signature Cocktails</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable SC"></div>
+                <button class="nav-button right">›</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3 id="h3Cocktails" data-translate="cocktails">Cocktails</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable CO"></div>
+                <button class="nav-button right">›</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3 id="h3Desserts" data-translate="desserts">Desserts</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable DS"></div>
+                <button class="nav-button right">›</button>
+            </div>
+        </div>
+cocktails: 'Cocktails',        <div class="section">
+            <h3 id="h3Dishes" data-translate="dishes">Dishes</h3>
+            <div class="drinks-container">
+                <button class="nav-button left">‹</button>
+                <div class="scrollable DSH"></div>
+                <button class="nav-button right">›</button>
+            </div>
+        </div>
+    </section>
+    <script src="../scripts/btns.js"></script>
+</body>
+</html>
