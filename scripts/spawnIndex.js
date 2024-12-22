@@ -25,6 +25,10 @@ const pageTranslate = [
     { id: 'navBtn-DrinksMap', mobileId: 'mobile-navBtn-DrinksMap', varENG: 'Drinks Map', varRUS: 'Карта Напитков', varUKR: 'Карта Напоїв', varTUR: 'İçecek Haritası', varSRB: 'Мапа пића', varKAZ: 'Сусындар картасы', varARM: 'Ըմպելիքների քարտեզ', varBLR: 'Карта Напояў' },
     { id: 'navBtn-DishesMap', mobileId: 'mobile-navBtn-DishesMap', varENG: 'Dishes Map', varRUS: 'Карта Блюд', varUKR: 'Карта Страв', varTUR: 'Yemek Haritası', varSRB: 'Мапа јела', varKAZ: 'Ас мәзірі картасы', varARM: 'Ուտեստների քարտեզ', varBLR: 'Карта Страв' },
     { id: 'navBtn-MainPage', mobileId: 'mobile-navBtn-MainPage', varENG: 'Main Page', varRUS: 'Главная Страница', varUKR: 'Головна Сторінка', varTUR: 'Ana Sayfa', varSRB: 'Главна Страница', varKAZ: 'Басты Бет', varARM: 'Գլխավոր Էջ', varBLR: 'Галоўная Старонка' },
+    { id: 'h4-section', varENG: 'The presentation may vary', varRUS: 'Сервировка может отличаться', varUKR: 'Сервірування може відрізнятися', varTUR: 'Sunum farklılık gösterebilir', varSRB: 'Сервирање може да варира', varKAZ: 'Сервировка өзгеше болуы мүмкін', varARM: 'Սերվիրումը կարող է տարբերվել', varBLR: 'Сервіроўка можа адрознівацца' },
+    { id: 'h3Сocktails', varENG: 'Cocktails', varRUS: 'Коктейли', varUKR: 'Коктейлі', varTUR: 'Kokteyller', varSRB: 'Коктели', varKAZ: 'Коктейльдер', varARM: 'Կոկտեյլներ', varBLR: 'Коктейлі' },
+    { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+
 ];
 
 // Текущий язык
@@ -280,6 +284,48 @@ function closeAllCards() {
         }
     });
 }
+
+
+function populateTextSection() {
+    const listContainers = document.querySelectorAll('.text-section .list'); // Находим все контейнеры списков
+
+    listContainers.forEach(container => {
+        container.innerHTML = ''; // Очищаем каждый контейнер перед заполнением
+
+        const classList = Array.from(container.classList); // Получаем список классов
+        const categoryClass = classList.find(cls => cls !== 'list'); // Находим нужный класс (например, SC или CO)
+
+        if (!categoryClass) return; // Если класс не найден, пропускаем обработку
+
+        // Фильтруем элементы коллекции по начальным буквам ID
+        const filteredItems = drinksCollection.filter(item => item.id.startsWith(categoryClass));
+
+        // Генерируем элементы списка
+        filteredItems.forEach(item => {
+            const listItem = document.createElement('div');
+            listItem.classList.add('list-item');
+
+            const nameElement = document.createElement('span');
+            nameElement.classList.add('name');
+            nameElement.textContent = item.name;
+
+            const priceElement = document.createElement('span');
+            priceElement.classList.add('price');
+            priceElement.textContent = item.price;
+
+            listItem.appendChild(nameElement);
+            listItem.appendChild(priceElement);
+            container.appendChild(listItem);
+        });
+    });
+}
+
+// Вызов функции после загрузки страницы
+document.addEventListener('DOMContentLoaded', populateTextSection);
+
+
+
+
 
 
 // Начальное создание карточек
