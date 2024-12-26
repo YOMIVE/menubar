@@ -1,3 +1,105 @@
+function scrollToSoftDrinks() {
+    var element = document.getElementById("h3SoftDrinks");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToСocktails() {
+    var element = document.getElementById("h3Сocktails");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToWine() {
+    var element = document.getElementById("h3Wine");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToBottledBeer() {
+    var element = document.getElementById("h3Beer");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToShots() {
+    var element = document.getElementById("h3Shots");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
+function scrollToCoffeeAndTea() {
+    var element = document.getElementById("h3СoffeeAndTea");
+    if (element) {
+        // Получаем координаты элемента
+        var rect = element.getBoundingClientRect();
+
+        // Проверяем ширину экрана и задаем смещение
+        var offset = window.innerWidth < 600 ? 90 : 150;
+
+        // Сдвигаем страницу
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset, // смещаем на заданное значение
+            behavior: 'smooth' // плавная прокрутка
+        });
+    }
+}
+
 function scrollToTopDrinks() {
     var element = document.getElementById("mobile-h3Top");
     if (element) {

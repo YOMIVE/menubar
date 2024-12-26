@@ -383,7 +383,7 @@
         height: 14.4rem;
         margin-top: 0.5rem;
         border-radius: 0.63rem;
-        background-color: #fff;
+        background-color: #ffffff00;
     }
 
     .card > .text {
@@ -455,7 +455,7 @@
     }
     
     .a-b > .grid-left {
-        border-left: solid 2px #FFF;
+        border-left: solid 1px #FFF;
         margin-right: 0.8rem;
         margin-left: 0.8rem;
     }
