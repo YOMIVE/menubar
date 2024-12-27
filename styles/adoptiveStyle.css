@@ -117,6 +117,7 @@
     .content-nav-bar-phone > ul > li {
         margin-top: 0.7rem;
         border: none;
+        text-align: left;
     }
 
     .content-nav-bar-phone > ul > li > button{
