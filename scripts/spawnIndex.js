@@ -51,7 +51,15 @@ const pageTranslate = [
     { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
     { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
     { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
-    { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+    { id: 'navBtn-Breakfast', mobileId: 'mobile-navBtn-Breakfast', varENG: 'Breakfast', varRUS: 'Завтрак', varUKR: 'Сніданок', varTUR: 'Kahvaltı', varSRB: 'Доручак', varKAZ: 'Таңғы ас', varARM: 'Նախաճաշ', varBLR: 'Сняданак' },
+    { id: 'navBtn-Burgers', mobileId: 'mobile-navBtn-Burgers', varENG: 'Burgers', varRUS: 'Бургеры', varUKR: 'Бургери', varTUR: 'Burgerler', varSRB: 'Бургерi', varKAZ: 'Бургерлер', varARM: 'Բուրգերներ', varBLR: 'Бургеры' },
+    { id: 'navBtn-Beer', mobileId: 'mobile-navBtn-Beer', varENG: 'Beer', varRUS: 'Пиво', varUKR: 'Пиво', varTUR: 'Bira', varSRB: 'Пиво', varKAZ: 'Сыра', varARM: 'Գարեջուր', varBLR: 'Піва' },
+    { id: 'navBtn-Wine', mobileId: 'mobile-navBtn-Wine', varENG: 'Wine', varRUS: 'Вино', varUKR: 'Вино', varTUR: 'Şarap', varSRB: 'Вино', varKAZ: 'Шарап', varARM: 'Գինի', varBLR: 'Віно' },
+    { id: 'navBtn-Pancakes', mobileId: 'mobile-navBtn-Pancakes', varENG: 'Pancakes', varRUS: 'Блины', varUKR: 'Млинці', varTUR: 'Pankekler', varSRB: 'Палачинке', varKAZ: 'Құймақтар', varARM: 'Պանկեյքեր', varBLR: 'Бліны' },
+    { id: 'navBtn-Salads', mobileId: 'mobile-navBtn-Salads', varENG: 'Salads', varRUS: 'Салаты', varUKR: 'Салати', varTUR: 'Salatalar', varSRB: 'Салате', varKAZ: 'Салаттар', varARM: 'Աղցաններ', varBLR: 'Салаты' },
+    { id: 'navBtn-Bruschetta', mobileId: 'mobile-navBtn-Bruschetta', varENG: 'Bruschetta', varRUS: 'Брускетта', varUKR: 'Брускета', varTUR: 'Bruschetta', varSRB: 'Брускета', varKAZ: 'Брускетта', varARM: 'Բրուսկետա', varBLR: 'Брускета' },
+    { id: 'navBtn-Snaks', mobileId: 'mobile-navBtn-Snaks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закуске', varKAZ: 'Тіскебасарлар', varARM: 'Խորտիկներ', varBLR: 'Закускі' },
+    { id: '', mobileId: 'mobile-', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
 
 ];
 

@@ -1,3 +1,109 @@
+
+function scrollToBreakfast() {
+    var element = document.getElementById("h3Breakfast");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Функция для прокрутки к Pancakes
+function scrollToPancakes() {
+    var element = document.getElementById("h3Pancakes");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Функция для прокрутки к Salads
+function scrollToSalads() {
+    var element = document.getElementById("h3Salads");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Функция для прокрутки к Bruschetta
+function scrollToBruschetta() {
+    var element = document.getElementById("h3Bruschetta");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Функция для прокрутки к Snacks
+function scrollToSnaks() {
+    var element = document.getElementById("h3Snaks");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+function scrollToBurgers() {
+    var element = document.getElementById("h3Burgers");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+
+function scrollToBeer() {
+    var element = document.getElementById("h3Beer");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+
+function scrollToWine() {
+    var element = document.getElementById("h3Wine");
+    if (element) {
+        var rect = element.getBoundingClientRect();
+        var offset = window.innerWidth < 600 ? 90 : 150;
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
+            behavior: 'smooth'
+        });
+    }
+}
+
+
+
+
 function scrollToSoftDrinks() {
     var element = document.getElementById("h3SoftDrinks");
     if (element) {
