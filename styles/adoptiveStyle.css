@@ -117,6 +117,7 @@
     .content-nav-bar-phone > ul > li {
         margin-top: 0.7rem;
         border: none;
+        text-align: left;
     }
 
     .content-nav-bar-phone > ul > li > button{
@@ -125,12 +126,14 @@
         font-size: 0.8rem;
         color: white;
         font-weight: 600;
+        text-align: left;
     }
     .content-nav-bar-phone > ul > li > a {
         text-decoration: none;
         color: white;
         font-weight: 600;
         font-size: 0.8rem;
+        text-align: left;
     }
     
     .nav-bar-phone.active {
@@ -383,7 +386,7 @@
         height: 14.4rem;
         margin-top: 0.5rem;
         border-radius: 0.63rem;
-        background-color: #fff;
+        background-color: #ffffff00;
     }
 
     .card > .text {
@@ -394,6 +397,15 @@
         justify-content: space-between;
         margin-top: 0.75rem;
         margin-bottom: 0.75rem;
+    }
+
+
+    #h4-section {
+        font-size: 12px;
+        color: #ffffff7e;
+        margin-top: -1.4rem;
+        margin-bottom: 0.8rem;
+        margin-left: 0.8rem;
     }
 
     .card > .text > .name {
@@ -433,5 +445,57 @@
     .card.active >  .text-wrapper > .textDesc {
         opacity: 1;
         transition: all 0.5s ease;
+    }
+
+
+
+    .text-section {
+        margin-top: 30px;
+    }
+    
+    .a-b {
+        display: flex;
+    }
+    
+    .a-b > .grid-left {
+        border-left: solid 1px #FFF;
+        margin-right: 0.8rem;
+        margin-left: 0.8rem;
+    }
+    
+    .grid-div {
+        width: 90%;
+    }
+    
+    .text-section >  h3 {
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 30px;
+        margin-left: 0.8rem;
+    }
+    
+    .text-section .list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0px 0;
+        color: var(--white);
+    }
+    
+    .text-section .list-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 5px 0;
+    }
+    
+    .text-section .list-item .name {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .text-section .list-item .price {
+        font-weight: 400;
     }
 }

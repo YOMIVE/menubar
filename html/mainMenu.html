@@ -49,11 +49,13 @@
             <ul>
                 <li><a id="navBtn-DrinksMap" href="drinksMap.html">Drinks Map</a></li>
                 <li class="last-link"><a id="navBtn-DishesMap" href="dishesMap.html">Dishes Map</a></li>
-                <li><button id="navBtn-Top" onclick="scrollToTop()">Top</button></li>
+                <!--<li><button id="navBtn-Top" onclick="scrollToTop()">Top</button></li>-->
                 <li><button id="navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()">Signature Сocktails</button></li>
-                <li><button id="navBtn-Dishes" onclick="scrollToDishes()">Dishes</button></li>
-                <li><button id="navBtn-Snacks" onclick="scrollToSignatureСocktails()">Snacks</button></li>
-                <li><button id="navBtn-Desserts" onclick="scrollToDesserts()">Desserts</button></li>
+                <li><button id="navBtn-Сocktails" onclick="scrollToСocktails()">Cocktails</button></li>
+                <li><button id="navBtn-Breakfast" onclick="scrollToBreakfast()">Breakfast</button></li>
+                <li><button id="navBtn-Burgers" onclick="scrollToBurgers()">Burgers</button></li>
+                <li><button id="navBtn-Beer" onclick="scrollToBeer()">Beer</button></li>
+                <li><button id="navBtn-Wine" onclick="scrollToWine()">Wine</button></li>
             </ul>
         </div>
 
@@ -65,11 +67,13 @@
                 <ul>
                     <li><a id="mobile-navBtn-DrinksMap" href="drinksMap.html">Drinks Map</a></li>
                     <li><a id="mobile-navBtn-DishesMap" href="dishesMap.html">Dishes Map</a><hr></li>
-                    <li><button id="mobile-navBtn-Top" onclick="scrollToTop()">Top</button></li>
+                    <!--<li><button id="mobile-navBtn-Top" onclick="scrollToTop()">Top</button></li>-->
                     <li><button id="mobile-navBtn-SignatureCoctails" onclick="scrollToSignatureСocktails()">Signature Сocktails</button></li>
-                    <li><button id="mobile-navBtn-Dishes" onclick="scrollToDishes()">Dishes</button></li>
-                    <li><button id="mobile-navBtn-Snacks" onclick="scrollToSignatureСocktails()">Snacks</button></li>
-                    <li><button id="mobile-navBtn-Desserts" onclick="scrollToDesserts()">Desserts</button></li>
+                    <li><button id="mobile-navBtn-Сocktails" onclick="scrollToСocktails()">Cocktails</button></li>
+                    <li><button id="mobile-navBtn-Breakfast" onclick="scrollToBreakfast()">Breakfast</button></li>
+                    <li><button id="mobile-navBtn-Burgers" onclick="scrollToBurgers()">Burgers</button></li>
+                    <li><button id="mobile-navBtn-Beer" onclick="scrollToBeer()">Beer</button></li>
+                    <li><button id="mobile-navBtn-Wine" onclick="scrollToWine()">Wine</button></li>
                 </ul>
             </div>
             
@@ -109,13 +113,13 @@
 
 
 
-
+<!--
         <div class="section">
             <h3 id="h3Top">Top</h3>
             <div class="drinks-container">
                 <button class="nav-button left">‹</button>
                 <div class="scrollable TOP">
-                    <!--<div class="card" id="SC001">
+                    <div class="card" id="SC001">
                         <img src="data/drinksImages/Coffee 1.png" alt="Coffee" class="cardPhoto">
                         <div class="text">
                             <p class="name">TopCoc</p>
@@ -126,19 +130,85 @@
                                 <p class="desc">Romaine lettuce<br>Chicken breast (optional)<br>White bread (for croutons)<br>Parmesan cheese<br>Egg (for the dressing)<br>Garlic<br>Olive oil<br>Lemon juice<br>Worcestershire sauce<br>Salt and pepper</p>
                             </div>
                         </div class="text-wrapper">
-                    </div>-->
+                    </div>
                 </div> 
                 <button class="nav-button right" >›</button>
             </div>
-        </div>
+        </div>-->
         <div class="section">
             <h3 id="h3SignatureСocktails">Signature Сocktails</h3>
+            <h4 id="h4-section">*The presentation may vary</h4>
             <div class="drinks-container">
                 <button class="nav-button left">‹</button>
                 <div class="scrollable SC"></div> 
                 <button class="nav-button right" >›</button>
             </div>
         </div>
+        
+        <div class="text-section">
+            <h3 id="h3Сocktails">Сocktails</h3>
+            <div class="a-b">
+                <div class="grid-left"></div>
+                <div class="grid-div">
+                    <div class="list CO"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="text-section">
+            <h3 id="h3Dishes">Dishes</h3>
+            <div class="a-b">
+                <div class="grid-left"></div>
+                <div class="grid-div">
+                    <div class="list SA"></div>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="text-section">
+            <h3 id="h3Breakfast">Breakfast</h3>
+            <div class="a-b">
+                <div class="grid-left"></div>
+                <div class="grid-div">
+                    <div class="list BRF"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-section">
+            <h3 id="h3Burgers">Burgers</h3>
+            <div class="a-b">
+                <div class="grid-left"></div>
+                <div class="grid-div">
+                    <div class="list BRG"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-section">
+            <h3 id="h3Beer">Bottled Beer</h3>
+            <div class="a-b">
+                <div class="grid-left"></div>
+                <div class="grid-div">
+                    <div class="list BB"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-section">
+            <h3 id="h3Wine">Wine</h3>
+            <div class="a-b">
+                <div class="grid-left"></div>
+                <div class="grid-div">
+                    <div class="list WI"></div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <!--
         <div class="section">
             <h3 id="h3Сocktails">Сocktails</h3>
             <div class="drinks-container">
@@ -162,7 +232,7 @@
                 <div class="scrollable DSH"></div> 
                 <button class="nav-button right" >›</button>
             </div>
-        </div>
+        </div>-->
     </section>
     <script src="../scripts/btns.js"></script>
 </body>

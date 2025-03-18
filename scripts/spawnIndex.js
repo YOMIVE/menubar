@@ -25,6 +25,42 @@ const pageTranslate = [
     { id: 'navBtn-DrinksMap', mobileId: 'mobile-navBtn-DrinksMap', varENG: 'Drinks Map', varRUS: 'Карта Напитков', varUKR: 'Карта Напоїв', varTUR: 'İçecek Haritası', varSRB: 'Мапа пића', varKAZ: 'Сусындар картасы', varARM: 'Ըմպելիքների քարտեզ', varBLR: 'Карта Напояў' },
     { id: 'navBtn-DishesMap', mobileId: 'mobile-navBtn-DishesMap', varENG: 'Dishes Map', varRUS: 'Карта Блюд', varUKR: 'Карта Страв', varTUR: 'Yemek Haritası', varSRB: 'Мапа јела', varKAZ: 'Ас мәзірі картасы', varARM: 'Ուտեստների քարտեզ', varBLR: 'Карта Страв' },
     { id: 'navBtn-MainPage', mobileId: 'mobile-navBtn-MainPage', varENG: 'Main Page', varRUS: 'Главная Страница', varUKR: 'Головна Сторінка', varTUR: 'Ana Sayfa', varSRB: 'Главна Страница', varKAZ: 'Басты Бет', varARM: 'Գլխավոր Էջ', varBLR: 'Галоўная Старонка' },
+    { id: 'h4-section', varENG: 'The presentation may vary', varRUS: 'Сервировка может отличаться', varUKR: 'Сервірування може відрізнятися', varTUR: 'Sunum farklılık gösterebilir', varSRB: 'Сервирање може да варира', varKAZ: 'Сервировка өзгеше болуы мүмкін', varARM: 'Սերվիրումը կարող է տարբերվել', varBLR: 'Сервіроўка можа адрознівацца' },
+    { id: 'h3Сocktails', varENG: 'Cocktails', varRUS: 'Коктейли', varUKR: 'Коктейлі', varTUR: 'Kokteyller', varSRB: 'Коктели', varKAZ: 'Коктейльдер', varARM: 'Կոկտեյլներ', varBLR: 'Коктейлі' },
+    { id: 'h3СoffeeAndTea', varENG: 'Coffee & Tea', varRUS: 'Кофе и Чай', varUKR: 'Кава та Чай', varTUR: 'Kahve ve Çay', varSRB: 'Кафа и чај', varKAZ: 'Кофе мен Шай', varARM: 'Սուրճ և Թեյ', varBLR: 'Кава і Чай' },
+    { id: 'h3SoftDrinks', varENG: 'Soft Drinks', varRUS: 'Безалкогольные Напитки', varUKR: 'Безалкогольні Напої', varTUR: 'Alkolsüz İçecekler', varSRB: 'Безалкохолна пића', varKAZ: 'Алкогольсіз Сусындар', varARM: 'Ալկոհոլազուրկ Ըմպելիքներ', varBLR: 'Безалкагольныя Напоі' },
+    { id: 'h3NACO', varENG: 'No Alcohol Cocktails', varRUS: 'Безалкогольные Коктейли', varUKR: 'Безалкогольні Коктейлі', varTUR: 'Alkolsüz Kokteyller', varSRB: 'Безалкохолни коктели', varKAZ: 'Алкогольсіз Коктейльдер', varARM: 'Ալկոհոլազուրկ Կոկտեյլներ', varBLR: 'Безалкагольныя Кактэйлі' },
+    { id: 'h3Beer', varENG: 'Bottled Beer', varRUS: 'Пиво в Бутылках', varUKR: 'Пиво в Пляшках', varTUR: 'Şişelenmiş Bira', varSRB: 'Пиво у флашама', varKAZ: 'Бөтелкедегі Сыра', varARM: 'Շշալցված Գարեջուր', varBLR: 'Піва ў Бутэльках' },
+    { id: 'h3Wine', varENG: 'Wine', varRUS: 'Вино', varUKR: 'Вино', varTUR: 'Şarap', varSRB: 'Вино', varKAZ: 'Шарап', varARM: 'Գինի', varBLR: 'Віно' },
+    { id: 'h3Shots', varENG: 'Shots', varRUS: 'Шоты', varUKR: 'Шоти', varTUR: 'Shotlar', varSRB: 'Шотови', varKAZ: 'Шоттар', varARM: 'Շոտեր', varBLR: 'Шоты' },
+    { id: 'navBtn-CoffeeAndTea', mobileId: 'mobile-navBtn-CoffeeAndTea', varENG: 'Coffee & Tea', varRUS: 'Кофе и Чай', varUKR: 'Кава та Чай', varTUR: 'Kahve ve Çay', varSRB: 'Кафа и чај', varKAZ: 'Кофе мен Шай', varARM: 'Սուրճ և Թեյ', varBLR: 'Кава і Чай' },
+    { id: 'navBtn-SoftDrinks', mobileId: 'mobile-navBtn-SoftDrinks', varENG: 'Soft Drinks', varRUS: 'Безалкогольные Напитки', varUKR: 'Безалкогольні Напої', varTUR: 'Alkolsüz İçecekler', varSRB: 'Безалкохолна пића', varKAZ: 'Алкогольсіз Сусындар', varARM: 'Ալկոհոլազուրկ Ըմպելիքներ', varBLR: 'Безалкагольныя Напоі' },
+    { id: 'navBtn-Сocktails', mobileId: 'mobile-navBtn-Сocktails', varENG: 'Cocktails', varRUS: 'Коктейли', varUKR: 'Коктейлі', varTUR: 'Kokteyller', varSRB: 'Коктели', varKAZ: 'Коктейльдер', varARM: 'Կոկտեյլներ', varBLR: 'Кактэйлі' },
+    { id: 'navBtn-Wine', mobileId: 'mobile-navBtn-Wine', varENG: 'Wine', varRUS: 'Вино', varUKR: 'Вино', varTUR: 'Şarap', varSRB: 'Вино', varKAZ: 'Шарап', varARM: 'Գինի', varBLR: 'Віно' },
+    { id: 'navBtn-BottledBeer', mobileId: 'mobile-navBtn-BottledBeer', varENG: 'Bottled Beer', varRUS: 'Пиво в Бутылках', varUKR: 'Пиво в Пляшках', varTUR: 'Şişelenmiş Bira', varSRB: 'Пиво у флашама', varKAZ: 'Бөтелкедегі Сыра', varARM: 'Շշալցված Գարեջուր', varBLR: 'Піва ў Бутэльках' },
+    { id: 'navBtn-Shots', mobileId: 'mobile-navBtn-Shots', varENG: 'Shots', varRUS: 'Шоты', varUKR: 'Шоти', varTUR: 'Shotlar', varSRB: 'Шотови', varKAZ: 'Шоттар', varARM: 'Շոտեր', varBLR: 'Шоты' },
+    { id: 'h3Breakfast', varENG: 'Breakfast', varRUS: 'Завтрак', varUKR: 'Сніданок', varTUR: 'Kahvaltı', varSRB: 'Доручак', varKAZ: 'Таңғы ас', varARM: 'Նախաճաշ', varBLR: 'Сняданак' },
+    { id: 'h3Pancakes', varENG: 'Pancakes', varRUS: 'Блины', varUKR: 'Млинці', varTUR: 'Krep', varSRB: 'Палачинке', varKAZ: 'Блиндер', varARM: 'Բլիթներ', varBLR: 'Бліны' },
+    { id: 'h3Salads', varENG: 'Salads', varRUS: 'Салаты', varUKR: 'Салати', varTUR: 'Salatalar', varSRB: 'Салате', varKAZ: 'Салаттар', varARM: 'Աղցաններ', varBLR: 'Салаты' },
+    { id: 'h3Sauces(50G)', varENG: 'Sauces (50G)', varRUS: 'Соусы (50Г)', varUKR: 'Соуси (50Г)', varTUR: 'Soslar (50G)', varSRB: 'Сосови (50Г)', varKAZ: 'Соустар (50Г)', varARM: 'Սոուսներ (50Գ)', varBLR: 'Соусы (50Г)' },
+    { id: 'h3Burgers', varENG: 'Burgers', varRUS: 'Бургеры', varUKR: 'Бургери', varTUR: 'Burgerler', varSRB: 'Бургер', varKAZ: 'Бургерлер', varARM: 'Բուրգերներ', varBLR: 'Бургеры' },
+    { id: 'h3Bruschetta', varENG: 'Bruschetta', varRUS: 'Брускетта', varUKR: 'Брускета', varTUR: 'Bruschetta', varSRB: 'Брускета', varKAZ: 'Брускетта', varARM: 'Բրուսկետա', varBLR: 'Брускетта' },
+    { id: 'h3Snaks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закуске', varKAZ: 'Таңғы ас', varARM: 'Խորտիկներ', varBLR: 'Закускі' },
+    { id: 'h3HotSnacks', varENG: 'Hot Snacks', varRUS: 'Горячие Закуски', varUKR: 'Гарячі Закуски', varTUR: 'Sıcak Atıştırmalıklar', varSRB: 'Топле закуске', varKAZ: 'Ыстық Таңғы Ас', varARM: 'Տաք Խորտիկներ', varBLR: 'Гарачыя Закускі' },
+    { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+    { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+    { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+    { id: '', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+    { id: 'navBtn-Breakfast', mobileId: 'mobile-navBtn-Breakfast', varENG: 'Breakfast', varRUS: 'Завтрак', varUKR: 'Сніданок', varTUR: 'Kahvaltı', varSRB: 'Доручак', varKAZ: 'Таңғы ас', varARM: 'Նախաճաշ', varBLR: 'Сняданак' },
+    { id: 'navBtn-Burgers', mobileId: 'mobile-navBtn-Burgers', varENG: 'Burgers', varRUS: 'Бургеры', varUKR: 'Бургери', varTUR: 'Burgerler', varSRB: 'Бургерi', varKAZ: 'Бургерлер', varARM: 'Բուրգերներ', varBLR: 'Бургеры' },
+    { id: 'navBtn-Beer', mobileId: 'mobile-navBtn-Beer', varENG: 'Beer', varRUS: 'Пиво', varUKR: 'Пиво', varTUR: 'Bira', varSRB: 'Пиво', varKAZ: 'Сыра', varARM: 'Գարեջուր', varBLR: 'Піва' },
+    { id: 'navBtn-Wine', mobileId: 'mobile-navBtn-Wine', varENG: 'Wine', varRUS: 'Вино', varUKR: 'Вино', varTUR: 'Şarap', varSRB: 'Вино', varKAZ: 'Шарап', varARM: 'Գինի', varBLR: 'Віно' },
+    { id: 'navBtn-Pancakes', mobileId: 'mobile-navBtn-Pancakes', varENG: 'Pancakes', varRUS: 'Блины', varUKR: 'Млинці', varTUR: 'Pankekler', varSRB: 'Палачинке', varKAZ: 'Құймақтар', varARM: 'Պանկեյքեր', varBLR: 'Бліны' },
+    { id: 'navBtn-Salads', mobileId: 'mobile-navBtn-Salads', varENG: 'Salads', varRUS: 'Салаты', varUKR: 'Салати', varTUR: 'Salatalar', varSRB: 'Салате', varKAZ: 'Салаттар', varARM: 'Աղցաններ', varBLR: 'Салаты' },
+    { id: 'navBtn-Bruschetta', mobileId: 'mobile-navBtn-Bruschetta', varENG: 'Bruschetta', varRUS: 'Брускетта', varUKR: 'Брускета', varTUR: 'Bruschetta', varSRB: 'Брускета', varKAZ: 'Брускетта', varARM: 'Բրուսկետա', varBLR: 'Брускета' },
+    { id: 'navBtn-Snaks', mobileId: 'mobile-navBtn-Snaks', varENG: 'Snacks', varRUS: 'Закуски', varUKR: 'Закуски', varTUR: 'Atıştırmalıklar', varSRB: 'Закуске', varKAZ: 'Тіскебасарлар', varARM: 'Խորտիկներ', varBLR: 'Закускі' },
+    { id: '', mobileId: 'mobile-', varENG: '', varRUS: '', varUKR: '', varTUR: '', varSRB: '', varKAZ: '', varARM: '', varBLR: '' },
+
 ];
 
 // Текущий язык
@@ -78,6 +114,8 @@ function updateLanguage(lang) {
         }
     });
 
+    
+    populateSections()
     // Обновляем другие элементы, если необходимо
     spawnCards();
 }
@@ -97,6 +135,8 @@ function updateLanguageDropdown() {
             languageDropdown.appendChild(listItem);
         }
     });
+
+    
 }
 
 // Функция для получения названия языка по его коду
@@ -136,20 +176,53 @@ function createCard(drink) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.id = drink.id;
-    
+
+    // Создаем картинку
+    const cardPhoto = document.createElement('img');
+    cardPhoto.src = drink.image;
+    cardPhoto.alt = drink.name;
+    cardPhoto.classList.add('cardPhoto');
+
+    // Создаем блок текста
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('text');
+
+    // Проверяем длину названия
+    const isLongName = drink.name.length > 18;
+
+    // Создаем блок для названия
+    const nameContainer = document.createElement('div');
+    nameContainer.classList.add('name-container');
+
+    const nameElement = document.createElement('p');
+    nameElement.classList.add('name');
+    nameElement.textContent = drink.name;
+
+    if (isLongName) {
+        nameElement.style.fontSize = '16px';
+        nameContainer.style.display = 'flex';
+        nameContainer.style.alignItems = 'center';
+        nameContainer.style.justifyContent = 'center';
+    }
+
+    nameContainer.appendChild(nameElement);
+
+    // Создаем блок для цены
+    const priceContainer = document.createElement('div');
+    priceContainer.classList.add('price-container');
+
+    const priceElement = document.createElement('p');
+    priceElement.classList.add('price');
+    priceElement.textContent = drink.price;
+
+    priceContainer.appendChild(priceElement);
+
+    // Добавляем название и цену в textDiv
+    textDiv.appendChild(nameContainer);
+    textDiv.appendChild(priceContainer);
+
     if (drink.isOpen) {
-        const cardPhoto = document.createElement('img');
-        cardPhoto.src = drink.image;
-        cardPhoto.alt = drink.name;
-        cardPhoto.classList.add('cardPhoto');
-
-        const textDiv = document.createElement('div');
-        textDiv.classList.add('text');
-        textDiv.innerHTML = `
-            <p class="name">${drink.name}</p>
-            <p class="price">${drink.price}</p>
-        `;
-
+        // Создаем блок с описанием
         const textWrapper = document.createElement('div');
         textWrapper.classList.add('text-wrapper');
 
@@ -158,30 +231,20 @@ function createCard(drink) {
         textDesc.innerHTML = `<p class="desc">${drink[`desc${currentLanguage}`]}</p>`;
 
         textWrapper.appendChild(textDesc);
-        card.appendChild(cardPhoto);
-        card.appendChild(textDiv);
-        card.appendChild(textWrapper);
 
-        return card;
+        // Добавляем элементы в карточку в правильном порядке
+        card.appendChild(cardPhoto); // Сначала картинка
+        card.appendChild(textDiv);   // Затем название и цена
+        card.appendChild(textWrapper); // Описание добавляется внизу
     } else {
-        const cardPhoto = document.createElement('img');
-        cardPhoto.src = drink.image;
-        cardPhoto.alt = drink.name;
-        cardPhoto.classList.add('cardPhoto');
-
-        const textDiv = document.createElement('div');
-        textDiv.classList.add('text');
-        textDiv.innerHTML = `
-            <p class="name">${drink.name}</p>
-            <p class="price">${drink.price}</p>
-        `;
-        card.appendChild(cardPhoto);
-        card.appendChild(textDiv);
-
-        return card;
+        card.appendChild(cardPhoto); // Сначала картинка
+        card.appendChild(textDiv);   // Затем название и цена
     }
-    
+
+    return card;
 }
+
+
 
 function spawnCards() {
     const scrollableContainers = document.querySelectorAll('.scrollable');
@@ -280,6 +343,84 @@ function closeAllCards() {
         }
     });
 }
+
+
+function populateSections() {
+    const sections = document.querySelectorAll('.text-section .list'); // Находим все секции с классом list
+
+    sections.forEach(section => {
+        const classList = Array.from(section.classList); // Получаем список классов
+        const categoryClass = classList.find(cls => cls !== 'list'); // Определяем ключ категории (например, CO, SAL)
+
+        if (!categoryClass) {
+            console.warn('Category class not found for section:', section);
+            return;
+        }
+
+        section.innerHTML = ''; // Очищаем секцию перед заполнением
+
+        // Фильтруем элементы коллекции по категории
+        const filteredItems = drinksCollection.filter(item => item.id.startsWith(categoryClass));
+        if (!filteredItems.length) {
+            console.warn(`No items found for category: ${categoryClass}`);
+            return;
+        }
+
+        // Определяем формат секции (2 или 3 буквы в ключе)
+        const isDetailedFormat = categoryClass.length === 3;
+
+        // Генерируем элементы секции
+        filteredItems.forEach(item => {
+            const listItem = document.createElement('div');
+            listItem.classList.add('list-item');
+
+            // Определяем имя, цену и описание
+            const name = item[`name${currentLanguage}`] || item.name || 'Unnamed';
+            const price = item.price || 'N/A';
+            const description = isDetailedFormat
+                ? (item[`desc${currentLanguage}`] || 'No description available').replace(/<br\s*\/?>/g, ' ')
+                : null;
+
+            // Создаем контейнер для названия и цены
+            const nameContainer = document.createElement('div');
+            nameContainer.classList.add('name-container');
+
+            const nameElement = document.createElement('span');
+            nameElement.classList.add('name');
+            nameElement.textContent = name;
+
+            const priceElement = document.createElement('span');
+            priceElement.classList.add('price');
+            priceElement.textContent = price;
+
+            nameContainer.appendChild(nameElement);
+            nameContainer.appendChild(priceElement);
+            listItem.appendChild(nameContainer);
+
+            // Добавляем описание, если это требуется форматом
+            if (description) {
+                const descriptionElement = document.createElement('div');
+                descriptionElement.classList.add('description');
+                descriptionElement.textContent = description;
+                listItem.appendChild(descriptionElement);
+            }
+
+            section.appendChild(listItem);
+        });
+    });
+}
+
+// Вызов функции при загрузке страницы
+document.addEventListener('DOMContentLoaded', populateSections);
+
+// Вызов функции при смене языка
+selectedLanguageBtn.addEventListener('click', () => {
+    setTimeout(populateSections, 300); // Обновляем после смены языка
+});
+
+
+
+
 
 
 // Начальное создание карточек
